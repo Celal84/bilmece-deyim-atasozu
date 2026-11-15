@@ -35,3 +35,4 @@ pw="${KEYSTORE_PASSWORD:-$(cat "$and/keystore-password.txt")}"
   --out "$here/BilmeceDeyimAtasozu.apk" "$out/aligned.apk"
 "$bt/apksigner" verify "$here/BilmeceDeyimAtasozu.apk"
 echo "APK ready: $here/BilmeceDeyimAtasozu.apk"
+# build tetik: ilk Actions derlemesi
