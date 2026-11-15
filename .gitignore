@@ -5,3 +5,4 @@ android/keystore-password.txt
 android/out/
 *.apk
 *.idsig
+github-secrets.txt
