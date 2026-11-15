@@ -1,0 +1,7 @@
+# secrets - never commit
+android/*.jks
+android/keystore-password.txt
+# build output
+android/out/
+*.apk
+*.idsig

@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Bilmece Deyim Atasözü</title>
+<style>*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+html{font-size:clamp(14px,4.1vw,21px)}
+html,body{margin:0;height:100%;overflow:hidden;font-family:"Trebuchet MS","Segoe UI",Roboto,system-ui,sans-serif;font-weight:700;color:#3b2a1a;background:#8fd3ff}
+button{font:inherit;color:inherit;border:0;cursor:pointer;touch-action:manipulation}
+#sky{position:fixed;inset:0;background:linear-gradient(#6cc3ff 0%,#bfe8ff 55%,#e9fbff 100%);z-index:0;overflow:hidden}
+#sky .cloud{position:absolute;font-size:3.5rem;opacity:.85;animation:drift linear infinite}
+#sky .hill{position:absolute;bottom:-6vh;left:-10vw;width:120vw;height:24vh;border-radius:50% 50% 0 0;background:#7ed957}
+#sky .hill.h2{left:30vw;width:90vw;height:18vh;background:#5cc13f}
+@keyframes drift{from{transform:translateX(-20vw)}to{transform:translateX(120vw)}}
+#app{position:fixed;inset:0;z-index:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+.wrap{max-width:600px;margin:0 auto;padding:.7rem .9rem 5.5rem;min-height:100%}
+.top{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.chip{background:#fff;border-radius:2rem;padding:.35rem .8rem;box-shadow:0 3px 0 rgba(0,0,0,.12);font-size:1rem;display:flex;align-items:center;gap:.3rem}
+.back{width:2.6rem;height:2.6rem;border-radius:50%;background:#fff;font-size:1.3rem;box-shadow:0 3px 0 rgba(0,0,0,.15);flex:none}
+.title{font-size:1.4rem;flex:1;text-align:center;text-shadow:0 2px 0 #fff}
+.btn{display:block;width:100%;border-radius:1.2rem;padding:.9rem 1rem;font-size:1.15rem;color:#fff;background:#8b5cf6;box-shadow:0 5px 0 rgba(0,0,0,.2);margin:.6rem 0;transition:transform .08s;text-align:center}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.2)}
+.btn.alt{background:#fff;color:#3b2a1a}
+.btn.green{background:#22c55e}.btn.orange{background:#f59e0b}.btn.pink{background:#ec4899}.btn.blue{background:#0ea5e9}
+.btn[disabled]{filter:grayscale(.8);opacity:.7}
+.row{display:flex;gap:.6rem}.row>*{flex:1}
+.hero{display:flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.85);border-radius:1.4rem;padding:.6rem .8rem;box-shadow:0 4px 0 rgba(0,0,0,.1)}
+.hero .bub{flex:1;font-size:1rem;line-height:1.3}
+.hero .bub b{font-size:1.15rem}
+.bar{height:.9rem;background:#e5e7eb;border-radius:1rem;overflow:hidden;margin-top:.35rem}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#fbbf24,#f59e0b);border-radius:1rem;transition:width .8s}
+.owlbox{position:relative;width:5.6rem;flex:none}
+.owlbox.big{width:9rem;margin:0 auto}
+.owlbox.sm{width:3.6rem}
+.owl{width:100%;display:block;overflow:visible}
+.hat{position:absolute;left:50%;top:-.3rem;transform:translateX(-50%) rotate(-6deg);font-size:2.1rem;line-height:1;pointer-events:none}
+.owlbox.big .hat{font-size:3.2rem;top:-.6rem}.owlbox.sm .hat{font-size:1.4rem}
+.owl .o-body{animation:bob 2.6s ease-in-out infinite;transform-origin:60px 120px}
+.owl .lid{animation:blink 4s infinite;transform-origin:center;transform-box:fill-box}
+.owl .wl{animation:flapL 2.6s ease-in-out infinite;transform-origin:100% 20%;transform-box:fill-box}
+.owl .wr{animation:flapR 2.6s ease-in-out infinite;transform-origin:0 20%;transform-box:fill-box}
+.owlbox.cheer{animation:jump .7s}
+.owlbox.sad{animation:wob .6s}
+@keyframes bob{50%{transform:translateY(-4px) rotate(1.5deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(0)}95%{transform:scaleY(1)}}
+@keyframes flapL{50%{transform:rotate(12deg)}}@keyframes flapR{50%{transform:rotate(-12deg)}}
+@keyframes jump{30%{transform:translateY(-1.4rem) scale(1.08)}60%{transform:translateY(0)}80%{transform:translateY(-.4rem)}}
+@keyframes wob{25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+.cards{display:grid;gap:.7rem;margin-top:.8rem}
+.sec{display:flex;align-items:center;gap:.8rem;border-radius:1.3rem;padding:.8rem .9rem;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.2);text-align:left;width:100%;animation:pop .5s backwards;position:relative;overflow:hidden}
+.sec:active{transform:translateY(3px)}
+.sec .em{font-size:2.4rem;flex:none;animation:wig 3s infinite}
+.sec .nm{font-size:1.2rem;line-height:1.1}
+.sec small{display:block;font-size:.8rem;font-weight:600;opacity:.95;margin-top:.15rem}
+.sec.lock{background:#9ca3af!important;filter:saturate(.4)}
+.sec.lock .em{animation:none}
+.sec .stars{position:absolute;right:.7rem;top:.5rem;font-size:.9rem}
+@keyframes pop{from{opacity:0;transform:scale(.6) translateY(20px)}}
+@keyframes wig{0%,85%,100%{transform:rotate(0)}90%{transform:rotate(-12deg)}95%{transform:rotate(12deg)}}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:center;gap:.5rem;padding:.5rem;background:rgba(255,255,255,.92);box-shadow:0 -3px 12px rgba(0,0,0,.12)}
+.dock button{flex:1;max-width:8rem;background:#fff7e6;border-radius:1rem;padding:.35rem 0;font-size:.75rem;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+.dock button span{display:block;font-size:1.5rem}
+.gift{position:relative;background:linear-gradient(135deg,#fde68a,#fbbf24);border-radius:1.3rem;padding:.7rem;display:flex;align-items:center;gap:.8rem;width:100%;box-shadow:0 5px 0 rgba(0,0,0,.18);margin-top:.7rem;animation:pulse 1.6s infinite;text-align:left;font-size:1.05rem}
+.gift .em{font-size:2.4rem;animation:shake 1s infinite}
+@keyframes pulse{50%{transform:scale(1.03)}}
+@keyframes shake{0%,70%,100%{transform:rotate(0)}75%{transform:rotate(-14deg)}85%{transform:rotate(14deg)}}
+/* quiz */
+.qcard{background:#fff;border-radius:1.4rem;padding:1rem;box-shadow:0 5px 0 rgba(0,0,0,.14);margin:.5rem 0 .8rem;animation:pop .35s;font-size:1.2rem;line-height:1.4}
+.qcard .tag{font-size:.8rem;color:#fff;border-radius:1rem;padding:.1rem .6rem;display:inline-block;margin-bottom:.4rem}
+.qcard .big{font-size:3.4rem;text-align:center;display:block;animation:pop .5s}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:3px solid #e5e7eb;border-radius:1.1rem;padding:.8rem .9rem;margin:.5rem 0;font-size:1.1rem;box-shadow:0 4px 0 rgba(0,0,0,.1);animation:pop .4s backwards}
+.opt:active{transform:translateY(3px)}
+.opt.ok{background:#bbf7d0;border-color:#22c55e;animation:okpop .5s}
+.opt.no{background:#fecaca;border-color:#ef4444;animation:shk .45s;opacity:.7}
+.opt.off{opacity:.35;pointer-events:none}
+@keyframes okpop{40%{transform:scale(1.07)}}
+@keyframes shk{20%{transform:translateX(-10px)}50%{transform:translateX(10px)}80%{transform:translateX(-6px)}}
+.dots{display:flex;gap:.3rem;flex:1;justify-content:center}
+.dots i{width:.8rem;height:.8rem;border-radius:50%;background:#fff;opacity:.6;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.dots i.on{background:#22c55e;opacity:1}.dots i.bad{background:#f87171;opacity:1}.dots i.cur{background:#fbbf24;opacity:1;transform:scale(1.3)}
+.fb{border-radius:1.2rem;padding:.8rem;margin:.6rem 0;font-size:1.05rem;line-height:1.4;animation:pop .4s}
+.fb.ok{background:#dcfce7}.fb.no{background:#fee2e2}
+.float{position:fixed;font-size:1.8rem;color:#f59e0b;pointer-events:none;z-index:60;animation:fl 1.1s forwards;text-shadow:0 2px 0 #fff}
+@keyframes fl{to{transform:translateY(-6rem);opacity:0}}
+.speak{background:#e0f2fe;border-radius:50%;width:2.6rem;height:2.6rem;font-size:1.3rem;float:right;margin-left:.5rem}
+.hintbtn{background:#fef3c7;border-radius:1rem;padding:.5rem 1rem;box-shadow:0 3px 0 rgba(0,0,0,.12);font-size:1rem}
+/* learn */
+.lcard{background:#fff;border-radius:1.6rem;padding:1.2rem;box-shadow:0 6px 0 rgba(0,0,0,.14);text-align:center;min-height:15rem;display:flex;flex-direction:column;justify-content:center;gap:.6rem;animation:pop .35s}
+.lcard .em{font-size:3.6rem}
+.lcard h2{margin:0;font-size:1.5rem;line-height:1.25}
+.lcard p{margin:0;font-size:1.1rem;line-height:1.45;font-weight:600}
+.lcard .ex{background:#f0f9ff;border-radius:1rem;padding:.6rem;font-style:italic}
+.lcard .ex b{color:#0284c7}
+.speeds{display:flex;gap:.4rem;justify-content:center}
+.speeds button{background:#f3e8ff;border-radius:1rem;padding:.5rem .8rem;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+/* result */
+.stars3{font-size:3.2rem;text-align:center;letter-spacing:.3rem}
+.stars3 span{display:inline-block;animation:starin .6s backwards}
+@keyframes starin{from{transform:scale(0) rotate(-180deg);opacity:0}}
+.big{font-size:3.4rem;text-align:center}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(30,20,60,.55);z-index:50;display:flex;align-items:center;justify-content:center;padding:1rem;animation:fade .25s}
+.mbox{background:#fff;border-radius:1.8rem;padding:1.3rem;max-width:22rem;width:100%;text-align:center;animation:pop .45s;box-shadow:0 8px 0 rgba(0,0,0,.2)}
+.mbox .em{font-size:4.4rem;animation:wig 1.6s infinite}
+.mbox h2{margin:.2rem 0;font-size:1.5rem}
+.mbox p{margin:.3rem 0 .6rem;font-size:1.05rem;line-height:1.4;font-weight:600}
+@keyframes fade{from{opacity:0}}
+.chest{font-size:6rem;animation:shake .6s infinite}
+.chest.open{animation:okpop .7s}
+#fx{position:fixed;inset:0;z-index:70;pointer-events:none}
+/* album */
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem}
+.stk{aspect-ratio:1;background:#fff;border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+.stk.no{background:#e5e7eb;filter:grayscale(1);opacity:.55;font-size:1.4rem}
+.stk.new{animation:okpop 1s infinite}
+.hats{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.hatc{background:#fff;border-radius:1.2rem;padding:.7rem;box-shadow:0 4px 0 rgba(0,0,0,.12);font-size:.95rem;text-align:center}
+.hatc .em{font-size:2.4rem;display:block}
+.hatc.sel{outline:4px solid #22c55e}
+.hatc.no{opacity:.5;filter:grayscale(1)}
+.tog{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:1.1rem;padding:.8rem 1rem;margin:.5rem 0;width:100%;font-size:1.1rem;box-shadow:0 3px 0 rgba(0,0,0,.1)}
+.tog b{background:#e5e7eb;border-radius:1rem;padding:.2rem .8rem}.tog b.on{background:#22c55e;color:#fff}
+input.name{width:100%;font:inherit;font-size:1.3rem;border:3px solid #c4b5fd;border-radius:1rem;padding:.7rem;text-align:center;user-select:text;-webkit-user-select:text}
+/* games */
+.mem{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.mc{aspect-ratio:1/1.05;perspective:600px;background:none;padding:0}
+.mc .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.mc.f .in,.mc.m .in{transform:rotateY(180deg)}
+.mc .fa,.mc .ba{position:absolute;inset:0;border-radius:1rem;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 4px 0 rgba(0,0,0,.15)}
+.mc .ba{background:linear-gradient(135deg,#a78bfa,#7c3aed);font-size:2rem;color:#fff}
+.mc .fa{background:#fff;transform:rotateY(180deg);font-size:2.4rem;text-align:center;line-height:1.1;padding:.2rem}
+.mc .fa.w{font-size:1.05rem}
+.mc.m .fa{background:#bbf7d0;animation:okpop .6s}
+.balls{position:relative;height:60vh;margin-top:.4rem}
+.ball{position:absolute;width:6.2rem;height:7.6rem;border-radius:50% 50% 48% 48%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;text-align:center;padding:.4rem;box-shadow:inset -8px -10px 0 rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.15);animation:float 3.4s ease-in-out infinite}
+.ball::after{content:"";position:absolute;bottom:-1.1rem;left:50%;width:2px;height:1.2rem;background:#6b7280}
+.ball.gone{animation:popb .35s forwards;pointer-events:none}
+.ball.bad{animation:shk .45s;opacity:.35;pointer-events:none}
+@keyframes float{50%{transform:translateY(-1.4rem) rotate(3deg)}}
+@keyframes popb{50%{transform:scale(1.4)}to{transform:scale(0);opacity:0}}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.mt{background:#fff;border:3px solid #e5e7eb;border-radius:1rem;padding:.6rem;font-size:.95rem;box-shadow:0 3px 0 rgba(0,0,0,.1);text-align:center;min-height:4rem;margin-bottom:.55rem;width:100%}
+.mt.sel{border-color:#f59e0b;background:#fef3c7}
+.mt.done{background:#bbf7d0;border-color:#22c55e;pointer-events:none}
+.mt.no{animation:shk .45s;border-color:#ef4444}
+.slots,.chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:.7rem 0}
+.slot{min-width:3.2rem;min-height:2.6rem;border:3px dashed #a78bfa;border-radius:.9rem;padding:.35rem .6rem;background:#faf5ff;font-size:1.05rem}
+.slot.fill{background:#e9d5ff;border-style:solid}.slot.ok{background:#bbf7d0;border-color:#22c55e}.slot.bad{background:#fecaca;border-color:#ef4444;animation:shk .45s}
+.chip2{background:#fff;border-radius:.9rem;padding:.45rem .8rem;box-shadow:0 3px 0 rgba(0,0,0,.15);font-size:1.05rem}
+.chip2.used{opacity:.25;pointer-events:none}
+</style></head>
+<body><div id="sky"></div><div id="app"></div><canvas id="fx"></canvas>
+<script>// ===== İÇERİK VERİSİ =====
+// Bilmece: [bilmece, cevap, emoji, grup]  (y=yiyecek, h=hayvan, e=eşya, d=doğa)
+const BILMECE = [
+["Dışı yeşil, içi kırmızı, içi çekirdek dolu. Yazın en çok onu yeriz.","Karpuz","🍉","y"],
+["Turuncu renkli, toprağın altında büyür. Tavşanların en sevdiği şey.","Havuç","🥕","y"],
+["Sarı kabuğu soyulur, biraz eğridir. Kabuğuna basarsan kayarsın.","Muz","🍌","y"],
+["Kırmızı yanaklıdır, ağaçta büyür. Günde bir tane yersen doktora gerek kalmaz derler.","Elma","🍎","y"],
+["Fırında pişer, sıcak sıcak kokar. Sofranın vazgeçilmezidir.","Ekmek","🍞","y"],
+["Dışı turuncu, içi dilim dilim. C vitamini doludur, suyunu sıkarız.","Portakal","🍊","y"],
+["Salkım salkım sallanır, yeşil ya da mor olur. Kuruyunca kuru olur.","Üzüm","🍇","y"],
+["Arılar yapar, çok tatlıdır. Kahvaltıda ekmeğe sürülür.","Bal","🍯","y"],
+["Kapısı yok, penceresi yok. Kırınca içinden sarısı akar.","Yumurta","🥚","y"],
+["Küçük ve kırmızıdır, üstü tohum doludur. Pastaların tepesini süsler.","Çilek","🍓","y"],
+["Soğuk soğuk, külahta yenir. Güneşin altında hemen erir.","Dondurma","🍦","y"],
+["Bembeyazdır, kemiklerimizi güçlendirir. Kedi de çok sever.","Süt","🥛","y"],
+["Hortumu var ama bahçe hortumu değil. Kulakları kocaman, kendisi kocaman.","Fil","🐘","h"],
+["Sırtında evi var, yavaş yavaş yürür. Tehlike görünce içine saklanır.","Kaplumbağa","🐢","h"],
+["Ormanın kralıdır. Yelesi vardır, kükrediği zaman herkes sessiz kalır.","Aslan","🦁","h"],
+["Kuş ama uçamaz. Siyah beyaz giyer, buzların üstünde yürür.","Penguen","🐧","h"],
+["Sabah güneşle uyanır, \"ü-ürü-üüü\" diye öterek herkesi uyandırır.","Horoz","🐓","h"],
+["Geceleri uyanıktır, kocaman gözleri var. \"Hu hu\" diye ses çıkarır.","Baykuş","🦉","h"],
+["Rengârenk kanatları var, çiçekten çiçeğe konar. Önceden tırtıldı.","Kelebek","🦋","h"],
+["Sekiz kolu var, denizde yaşar. Tehlikede mürekkep fışkırtır.","Ahtapot","🐙","h"],
+["Evimizi bekler, \"hav hav\" der. İnsanın en sadık dostudur.","Köpek","🐶","h"],
+["Mırıl mırıl ses çıkarır, patileri yumuşaktır. Fareyi yakalamayı sever.","Kedi","🐱","h"],
+["Süt verir, çayırda otlar, \"möö\" der.","İnek","🐮","h"],
+["Çiçeklerden bal toplar, kovanda yaşar. Kızdırırsan iğnesi var!","Arı","🐝","h"],
+["Boynu çok uzun, benekli. Ağaçların tepesindeki yaprakları yer.","Zürafa","🦒","h"],
+["Uzun kulakları var, zıplayarak gider. Yeşil yapraklı sebzeleri sever.","Tavşan","🐰","h"],
+["Denizde yaşar ama balık değildir. Çok zekidir, suyun üstünde zıplar.","Yunus","🐬","h"],
+["Gölde vıraklar, zıplar. Yavrusuna iribaş denir.","Kurbağa","🐸","h"],
+["Sekiz bacaklı, ağ örer. Ağına düşen sinekleri yakalar.","Örümcek","🕷️","h"],
+["Ağaçlara tırmanır, insana benzer. En sevdiği yiyecek sarı bir meyvedir.","Maymun","🐵","h"],
+["Sırtında hörgücü var, çölde yürür. Günlerce susuz kalabilir.","Deve","🐪","h"],
+["Dört ayağı var ama yürümez. Üzerine oturursun.","Sandalye","🪑","e"],
+["Sayfaları var ama defter değil. İçinde hikâyeler yaşar, okudukça öğreniriz.","Kitap","📖","e"],
+["Kulpu var ama kulağı yok. İçinde yemek pişer.","Tencere","🍲","e"],
+["Gece gündüz durmadan çalışır, tik tak der. Kolları var ama kimseye sarılmaz.","Saat","⏰","e"],
+["Ucu sivri, kâğıda yazar. Silgisi olan kardeşi de var.","Kalem","✏️","e"],
+["Okulda tahtaya yazarken kullanılır. Beyaz tozdan yapılır.","Tebeşir","🖍️","e"],
+["Dişleri var ama ısırmaz. Saçlarımızı düzeltir.","Tarak","💇","e"],
+["Gözü var ama göremez. İnce bir ucu var, dikiş dikmeye yarar.","İğne","🪡","e"],
+["Kapısını açınca içi ışık yanar. Yiyecekleri soğuk tutar.","Buzdolabı","🧊","e"],
+["İki tekerlekli, pedal çevirirsin. Yolda hızla gidersin.","Bisiklet","🚲","e"],
+["İki camı var, burnumuzun üstünde durur. Daha iyi görmemize yardım eder.","Gözlük","👓","e"],
+["Yağmur yağınca açarız, altında ıslanmayız.","Şemsiye","☂️","e"],
+["Cebimizde taşırız, dişleri vardır. Kapıyı açar.","Anahtar","🔑","e"],
+["Karşısına geçersin, seni taklit eder ama konuşmaz.","Ayna","🪞","e"],
+["Yuvarlaktır, tekmelenir. Kaleye girince herkes \"gol!\" diye bağırır.","Top","⚽","e"],
+["Sabah akşam dişlerimizi temizler.","Diş fırçası","🪥","e"],
+["Kanatları var ama kuş değil. İçinde yolcular, bulutların arasında süzülür.","Uçak","✈️","e"],
+["Denizde yüzer, içinde yolcular var. Direği ve dümeni vardır.","Gemi","🚢","e"],
+["İki bıçağı var, birbirine sarılmış. Kâğıt keser.","Makas","✂️","e"],
+["Sırtımıza takarız. Kitaplarımız, defterlerimiz içindedir.","Okul çantası","🎒","e"],
+["Kapısı penceresi var, çatısı var. Ailemizle birlikte içinde yaşarız.","Ev","🏠","e"],
+["Gündüz gökte parlar, bize ışık ve sıcaklık verir.","Güneş","☀️","d"],
+["Bazen yarım, bazen dolu. Geceleri gökyüzünde parlar.","Ay","🌙","d"],
+["Yağmurdan sonra gökte görünür. Yedi renkli bir kemere benzer.","Gökkuşağı","🌈","d"],
+["Beyaz beyaz, tanecik tanecik yağar. Kışın yağar, onunla topu atıp adam yaparız.","Kar","❄️","d"],
+["Pamuk gibi beyaz, gökte yüzer. Kararırsa yağmur yağar.","Bulut","☁️","d"],
+["Geceleri gökte binlerce tane göz kırpar.","Yıldız","⭐","d"],
+["Ben yürürsem o da yürür, ben dursam o da durur. Işık olmazsa kaybolur.","Gölge","👤","d"],
+["Kocaman gövdesi, yemyeşil yaprakları var. Altında serinleriz, kuşlar dallarında yaşar.","Ağaç","🌳","d"],
+["Üzerinde yaşıyoruz. Mavi ve yeşil, Güneş'in etrafında döner.","Dünya","🌍","d"],
+["Gökten damla damla düşer, çiçekleri sular. Şemsiyeyi açtırır.","Yağmur","🌧️","d"],
+["Mavi ve tuzlu, dalgaları var. Yazın içinde yüzeriz.","Deniz","🌊","d"],
+["Görünmez ama yaprakları oynatır, uçurtmayı uçurur.","Rüzgâr","🌬️","d"]
+];
+
+// Deyim: [deyim, anlamı, örnek cümle ({} = deyim yeri), emoji]
+const DEYIM = [
+["Ağzı kulaklarına varmak","Yüzünde kocaman bir gülümseme olmak","Karnesini görünce {ağzı kulaklarına vardı}.","😁"],
+["Gözü tok olmak","Elindekiyle yetinmek, açgözlü olmamak","Ayşe {gözü tok} bir çocuk; bir dilim pasta ona yetti.","😌"],
+["Kulak vermek","Dikkatle dinlemek","Dedemin anlattıklarına {kulak verdim}.","👂"],
+["Burnu havada olmak","Kendini başkalarından üstün görmek","Yeni bisikletini alınca {burnu havada} dolaşmaya başladı.","🤨"],
+["Elini taşın altına koymak","Bir işte sorumluluk almak","Sınıf temizliğinde herkes {elini taşın altına koydu}.","🪨"],
+["Çam devirmek","Yersiz, yanlış bir söz söylemek","Misafirlerin yanında {çam devirdi}, herkes sustu.","🌲"],
+["Kuş uçmaz kervan geçmez","Çok ıssız ve uzak bir yer","Dedemin köyü {kuş uçmaz kervan geçmez} bir yerdir.","🏜️"],
+["İçi içine sığmamak","Çok heyecanlanmak","Doğum günü yaklaşınca {içi içine sığmıyordu}.","🎂"],
+["Dil dökmek","Birini ikna etmek için tatlı tatlı konuşmak","Annesine parka gitmek için {dil döktü}.","🗣️"],
+["Göz kulak olmak","Dikkatle bakıp korumak","Annem kardeşime {göz kulak ol} dedi.","👀"],
+["Ateş pahası","Çok pahalı","Kışın sebzeler {ateş pahası} oldu.","💸"],
+["Etekleri zil çalmak","Sevincinden neşeyle coşmak","Tatil haberini alınca {etekleri zil çaldı}.","🔔"],
+["Kafa patlatmak","Bir sorunu çözmek için çok düşünmek","Zor bulmacaya uzun süre {kafa patlattı}.","🤯"],
+["Yüreği ağzına gelmek","Çok korkmak","Şimşek çakınca {yüreği ağzına geldi}.","😱"],
+["Eli açık olmak","Cömert olmak, paylaşmayı sevmek","Dedem {eli açık} biridir, herkese hediye alır.","🎁"],
+["Eli sıkı olmak","Cimri olmak, harcamayı sevmemek","Komşumuz {eli sıkı} biri, kolay kolay para harcamaz.","🔒"],
+["Kulağı kirişte olmak","Bir sesi ya da haberi sabırsızca beklemek","Zil çalacak diye {kulağı kirişteydi}.","🔔"],
+["Yelkenleri suya indirmek","Pes etmek, vazgeçmek","Rakip takım çok güçlü olunca {yelkenleri suya indirdik}.","⛵"],
+["Pireyi deve yapmak","Küçük bir olayı çok büyütmek","Küçük bir çizik için bağırma, {pireyi deve yapma}.","🦛"],
+["Dut yemiş bülbüle dönmek","Hiç konuşmamak, susup kalmak","Öğretmen soru sorunca Ali {dut yemiş bülbüle döndü}.","🐦"],
+["Gözünü budaktan sakınmamak","Korkmadan, cesaretle bir işe girişmek","İtfaiyeci {gözünü budaktan sakınmadan} kediyi kurtardı.","🚒"],
+["Dört gözle beklemek","Sabırsızlıkla beklemek","Yaz tatilini {dört gözle} bekliyoruz.","⏳"],
+["Üç aşağı beş yukarı","Aşağı yukarı, yaklaşık olarak","Sınıfta {üç aşağı beş yukarı} yirmi beş öğrenci var.","🧮"],
+["Ayağı yere basmamak","Sevinçten uçuyormuş gibi hissetmek","Hediyesini görünce {ayağı yere basmadı}.","🕊️"],
+["Diken üstünde oturmak","Çok huzursuz ve tedirgin olmak","Sonuçlar açıklanana kadar {diken üstünde oturdu}.","🌵"],
+["Gül gibi geçinmek","Birbiriyle çok iyi anlaşmak","İki kardeş {gül gibi geçiniyor}.","🌹"],
+["Kolları sıvamak","İşe hevesle başlamak","Bahçeyi toplamak için hep birlikte {kolları sıvadık}.","💪"],
+["Bal gibi","Hiç şüphe yok, çok açık","{Bal gibi} biliyorsun ama söylemiyorsun.","🍯"],
+["Burun kıvırmak","Bir şeyi beğenmeyip küçümsemek","Sebze yemeğine {burun kıvırdı}.","😒"],
+["Göz atmak","Hızlıca bir şeye bakmak","Kitaba kısaca {göz attım}.","📖"],
+["Baş üstünde yeri olmak","Çok sevilip saygı görmek","Öğretmenimizin hepimizin gözünde {baş üstünde yeri var}.","💖"]
+];
+
+// Atasözü: [metin ({} = eksik kelime), anlamı, emoji]
+const ATASOZU = [
+["Damlaya damlaya {göl} olur","Az az biriken şeyler zamanla çok olur.","💧"],
+["Sakla samanı gelir {zamanı}","Şimdi gereksiz görünen şey ileride işe yarayabilir.","🌾"],
+["Bir elin nesi var, iki elin {sesi} var","Birlikte çalışırsak işler kolaylaşır.","👏"],
+["Ağaç {yaşken} eğilir","Güzel alışkanlıklar küçük yaşta kazanılır.","🌱"],
+["Komşu komşunun {külüne} muhtaçtır","İnsanlar birbirine her zaman ihtiyaç duyar.","🏘️"],
+["{Sabreden} derviş muradına ermiş","Sabreden insan istediğine ulaşır.","⏳"],
+["Ayağını {yorganına} göre uzat","Harcamalarını elindeki paraya göre yap.","🛏️"],
+["Bugünün işini {yarına} bırakma","Yapılacak işi erteleme, hemen yap.","📅"],
+["Ne {ekersen} onu biçersin","Yaptığın şeyin karşılığını görürsün.","🌻"],
+["Erken kalkan {yol} alır","Erken başlayan çok iş başarır.","🌅"],
+["Gülü seven {dikenine} katlanır","Sevdiğin şey için küçük zorluklara katlanırsın.","🌹"],
+["Çok yaşayan bilmez, çok {gezen} bilir","Gezip görmek insanı bilgili yapar.","🧭"],
+["Atı alan {Üsküdar'ı} geçti","Fırsat kaçtı, iş işten geçti.","🐴"],
+["Dost {acı} söyler","Gerçek dost, doğruyu açıkça söyler.","🤝"],
+["Ak akçe kara gün {içindir}","Para, zor günler için biriktirilir.","🐷"],
+["Bin bilsen de bir {bilene} danış","Çok bilsen de bilen birine sor.","🧠"],
+["Rüzgâr eken {fırtına} biçer","Kötülük yapan kötülükle karşılaşır.","🌪️"],
+["{Hatasız} kul olmaz","Herkes hata yapabilir.","🙂"],
+["Tatlı dil {yılanı} deliğinden çıkarır","Güzel konuşmak insanı ikna eder.","🐍"],
+["Sütten ağzı yanan {yoğurdu} üfleyerek yer","Bir kere zarar gören, sonra daha dikkatli olur.","🥛"],
+["{Kervan} yolda düzülür","İşe başlarsan gerisi kendiliğinden gelir.","🐪"],
+["Bir fincan kahvenin kırk yıl {hatırı} vardır","Yapılan iyilik uzun yıllar unutulmaz.","☕"],
+["Yalancının mumu {yatsıya} kadar yanar","Yalan uzun süre saklanamaz.","🕯️"],
+["Balık {baştan} kokar","Bir yerdeki bozukluk çoğu zaman başındakilerden başlar.","🐟"],
+["Ne verirsen elinle, o gider {seninle}","Yaptığın iyilik sana geri döner.","🎁"],
+["Üzüm üzüme baka baka {kararır}","İnsan çevresindekilerden etkilenir.","🍇"],
+["Her yiğidin bir yoğurt {yiyişi} vardır","Herkesin kendine özgü bir yolu vardır.","🥣"],
+["Güneş girmeyen eve {doktor} girer","Güneş ve temiz hava sağlık için çok önemlidir.","☀️"],
+["Sabır acıdır, {meyvesi} tatlıdır","Sabretmek zordur ama sonucu güzeldir.","🍐"]
+];
+
+// Tekerleme: [başlık, metin, odak harf]
+const TEKERLEME = [
+["Berber","Bir berber bir berbere, gel beraber bir berber dükkânı açalım demiş.","b"],
+["Sarımsak","Bu yoğurdu sarımsaklasak da mı saklasak, sarımsaklamasak da mı saklasak?","s"],
+["Şapkacı","Şu şapkacı şapkaları şöyle şık şık dizmiş.","ş"],
+["Kara Kedi","Kara kedi karanlıkta kara kapıya karşı karıncaları kovalamış.","k"],
+["Pembe Pabuç","Pırıl pırıl pembe pabuçlar pazarda parlıyor.","p"],
+["Çıtır Çerez","Çıtır çıtır çerezleri çocuklar çabucak çiğnemiş.","ç"],
+["Leylek","Leylek Leyla'ya lacivert lale vermiş, Leyla da leylek için limonata yapmış.","l"],
+["Mavi Martı","Mavi martı mırıl mırıl müzik dinler, Mert de martıya mısır atmış.","m"],
+["Zeynep","Zeynep zilleri zırıl zırıl çalmış, zebra zıp zıp zıplamış.","z"],
+["Tavuk","Tavuk tıkır tıkır tane tane tahıl toplamış.","t"],
+["Elma","Ela elmayı eline almış, el ele elma yemişler.","e"],
+["Su","Susuz susamış susuzlara su sunar, su suyu sular.","s"],
+["Arı","Arı, Ayşe'nin armudunu görünce ağaçtan aşağı inmiş, ikisi de afiyetle yemiş.","a"],
+["Dede","Dedem dere dibinde dut silkelemiş, dutları dolu dolu dağıtmış.","d"]
+];
+
+// Fıkra: [başlık, metin, soru, [doğru,yanlış,yanlış], ders sorusu seçenekleri [doğru,yanlış,yanlış]]
+const FIKRA = [
+["Ya Tutarsa","Nasreddin Hoca bir gün göl kenarında yoğurdunu göle akıtıyormuş. Görenler sormuş: \"Hocam, ne yapıyorsun?\" Hoca: \"Göle maya çalıyorum.\" \"Hiç göl yoğurt olur mu?\" diyenlere Hoca gülümseyerek cevap vermiş: \"Ya tutarsa!\"","Hoca göle ne akıtıyordu?",["Yoğurt","Süt","Su"],["Her şeyi yapmadan önce mantıklı düşünmeliyiz","Yoğurdu göle atmak çok iyi bir fikirdir","Gölde yüzmek güzeldir"]],
+["Anahtar","Bir gece Hoca, sokak lambasının altında bir şey arıyormuş. Komşuları sormuş: \"Ne arıyorsun Hocam?\" \"Evin anahtarını düşürdüm.\" \"Nerede düşürdün?\" \"Evin içinde.\" \"O zaman neden burada arıyorsun?\" Hoca cevap vermiş: \"Burası daha aydınlık da ondan!\"","Hoca anahtarı neden sokakta arıyordu?",["Çünkü orası daha aydınlıktı","Çünkü anahtarı orada düşürmüştü","Çünkü evde kimse yoktu"],["Kaybettiğimiz şeyi doğru yerde aramalıyız","Geceleri dışarı çıkmak eğlencelidir","Anahtarlar çok değerlidir"]],
+["Ye Kürküm Ye","Hoca bir davete eski elbisesiyle gitmiş, kimse ona ilgi göstermemiş. Eve dönüp kürklü kaftanını giymiş, tekrar gitmiş. Bu sefer baş köşeye oturtmuşlar. Hoca çorbayı alıp kürkünün koluna dökmüş: \"Ye kürküm ye! Davet sana yapıldı!\"","Hoca çorbayı neye döktü?",["Kürküne","Komşusunun kafasına","Masaya"],["İnsanı kıyafetine göre değil, kendine göre değerlendirmeliyiz","İnsan çorbayı hep kürküyle içmelidir","Davetlere hiç gitmemeliyiz"]],
+["Ceviz ve Kabak","Hoca bir gün ceviz ağacının altında uzanmış, bir yandan da yerdeki kabağa bakıyormuş. Kendi kendine düşünmüş: \"Allah'ın işine bak, koca ağaca küçücük ceviz, ince dala koca kabak!\" O sırada başına bir ceviz düşmüş. Hoca hemen şükretmiş: \"İyi ki ağaçta kabak yokmuş, yoksa başım giderdi!\"","Hoca'nın başına ne düştü?",["Bir ceviz","Bir kabak","Bir elma"],["Her şeyin bir sebebi ve güzel tarafı vardır","Ceviz ağaçları çok tehlikelidir","Kabaklar dalda büyür"]],
+["Dalı Kesen Hoca","Hoca bir ağaca çıkmış, oturduğu dalı kesiyormuş. Yoldan geçen biri: \"Hocam, o dalı kesersen düşersin!\" demiş. Hoca aldırmamış. Dal kırılınca yere şangır şungur düşmüş. Kalkıp toz silkelemiş: \"Bu adam bilici çıktı!\"","Hoca neden yere düştü?",["Oturduğu dalı kesti","Ağaç çok kaygandı","Rüzgâr çok sert esti"],["Bize söylenen akıllıca uyarıları dinlemeliyiz","Ağaçlara hiç çıkmamalıyız","Testereyle iş yapmak çok kolaydır"]],
+["Timur ve Hoca","Timur, Hoca'ya sormuş: \"Sence ben kaç para ederim?\" Hoca: \"Yetmiş beş akçe.\" Timur kızmış: \"Sırtımdaki kaftan bile yetmiş beş akçe ediyor!\" Hoca sakince cevap vermiş: \"Ben de zaten onun değerini söyledim.\"","Hoca kaç akçe dedi?",["Yetmiş beş","On beş","Bin"],["Gerçek değer, gösterişte değil insanın kendisindedir","Kaftanlar çok pahalıdır","Padişahlara soru sorulmaz"]],
+["Eşek ve Oğul","Hoca oğluyla eşekle yola çıkmış. Önce oğlu eşeğe binmiş. Yoldan geçenler: \"Ayıp, çocuk biniyor, babası yürüyor!\" demiş. Bu sefer Hoca binmiş, oğlu yürümüş: \"Ne kadar kötü baba, çocuk yürüyor!\" Sonra ikisi birlikte binmiş: \"Zavallı eşek!\" Hoca sonunda eşeği kendi omzuna almış, herkes gülmüş. Hoca: \"Herkesi memnun etmek mümkün değil!\"","Yoldan geçenler Hoca'yı neden sürekli eleştirdi?",["Ne yapsalar bir kusur buldular","Eşek çok yavaş gidiyordu","Oğlu çok küçüktü"],["Herkesi memnun etmek mümkün değildir","Eşeğe hiç binmemeliyiz","Yolculuk yorucudur"]],
+["Ciğer","Hoca pazardan ciğer almış, eve götürmüş. Karısı ciğeri pişirip yemiş. Hoca sorunca \"Kedi yedi\" demiş. Hoca kediyi tartmış: tam bir kilo! \"Kedi bir kiloysa ciğer nerede? Ciğer bir kiloysa kedi nerede?\" demiş.","Hoca kediyi neden tarttı?",["Ciğeri kedi mi yedi anlamak için","Kediyi satmak için","Kedi hasta olduğu için"],["Doğruyu söylemeliyiz, yalan eninde sonunda anlaşılır","Kedilere ciğer vermeliyiz","Tartı çok işe yarar"]],
+["Kuyudaki Ay","Bir gece Hoca kuyunun başına gelmiş, suya bakmış: \"Eyvah, ay kuyuya düşmüş!\" Hemen bir ip bağlayıp kancayı kuyuya sallamış, çekmiş. Kanca kayaya takılmış, ip kopmuş, Hoca sırtüstü düşmüş. Gökyüzüne bakınca ay yerinde duruyormuş. \"Neyse ki kurtardım, çok yorulduk ama değdi!\" demiş.","Hoca kuyuda ne gördü?",["Ayın yansımasını","Bir balığı","Bir hazine"],["Gördüğümüz her şeyi önce iyice düşünüp anlamalıyız","Kuyulara hiç bakmamalıyız","Ay bazen yere düşer"]],
+["Ay mı Güneş mi?","Hoca'ya sormuşlar: \"Hocam, Ay mı daha faydalı, Güneş mi?\" Hoca düşünmeden cevap vermiş: \"Ay! Çünkü Güneş gündüz zaten aydınlıkken doğuyor. Ay ise karanlık geceleri aydınlatıyor.\"","Hoca neden Ay'ın daha faydalı olduğunu söyledi?",["Çünkü Ay geceyi aydınlatıyor","Çünkü Ay daha büyük","Çünkü Ay daha sıcak"],["Bir şeyin faydası, ihtiyaç olduğu yerde anlaşılır","Gündüzleri uyumalıyız","Güneş hiç işe yaramaz"]]
+];
+
+const FACTS = [
+["🐙","Ahtapotun tam üç kalbi vardır!"],
+["🦒","Zürafanın boynu çok uzundur ama insanla aynı sayıda, yani yedi boyun omuruna sahiptir."],
+["🦋","Kelebekler tat almayı ayaklarıyla yapar!"],
+["🍯","Bal, doğru saklanırsa yıllarca bozulmaz."],
+["🐘","Fil, atlayamayan nadir hayvanlardan biridir."],
+["🐱","Kediler günün çoğunu, yaklaşık 12-16 saatini uyuyarak geçirir."],
+["🐜","Karıncalar kendi ağırlıklarından çok daha fazlasını taşıyabilir."],
+["🐋","Mavi balina, Dünya'nın en büyük hayvanıdır."],
+["🌙","Ay, Dünya'nın etrafında dönen doğal uydumuzdur."],
+["🐧","Penguenler kuş oldukları halde uçamaz ama çok iyi yüzer."],
+["🐝","Bir bal arısı bütün hayatında yalnızca bir çay kaşığının yaklaşık on ikide biri kadar bal yapar."],
+["🌈","Gökkuşağında yedi renk vardır: kırmızı, turuncu, sarı, yeşil, mavi, lacivert ve mor."],
+["🐢","Kaplumbağalar yüzlerce yıl yaşayabilir."],
+["🦉","Baykuşlar başlarını neredeyse tamamen arkaya çevirebilir."],
+["☀️","Güneş aslında dev bir yıldızdır!"],
+["🐬","Yunuslar uyurken beyinlerinin yarısı uyanık kalır."]
+];
+
+const STICKERS = ["🦄","🐉","🦊","🐼","🦁","🐯","🐸","🐵","🐙","🦋","🐞","🐬","🦖","🚀","🛸","🌈","⭐","🌙","🎈","🎨","🏆","🎸","🪁","🧸","🎠","🍭","🍩","🧁","🍕","🎂","🪐","⛄","🔥","🌺","🦜","🐢","🦒","🐘","🦔","🐝"];
+
+const HATS = [
+{e:"",n:"Şapkasız",lvl:1},
+{e:"🎩",n:"Silindir Şapka",lvl:2},
+{e:"🎓",n:"Mezuniyet Şapkası",lvl:3},
+{e:"🧢",n:"Kasket",lvl:4},
+{e:"👑",n:"Kral Tacı",lvl:5},
+{e:"🎀",n:"Fiyonk",lvl:6},
+{e:"😎",n:"Havalı Gözlük",lvl:7},
+{e:"🪄",n:"Sihirli Değnek",lvl:8},
+{e:"🚀",n:"Roket Kask",lvl:9},
+{e:"🌟",n:"Yıldız Tacı",lvl:10}
+];
+
+const TITLES = ["Minik Kaşif","Meraklı Tilki","Kitap Kurdu","Bilmece Avcısı","Söz Ustası","Kelime Büyücüsü","Akıl Şövalyesi","Bilgelik Elçisi","Zeka Kahramanı","Orman Bilgesi","Süper Dahi","Efsane Baykuş"];
+
+// ===== "BİLİYOR MUYDUN?" BİLGİLERİ =====
+// Bilmece bilgileri (cevaba göre)
+const FB = {
+"Karpuz":"Karpuzun yaklaşık yüzde 92'si sudur. Bu yüzden yazın hem su içmiş gibi olur hem de serinletir.",
+"Havuç":"Havuçtaki turuncu renk, vücudumuzda A vitaminine dönüşen beta-karoten maddesinden gelir. Eskiden mor ve sarı havuçlar da yetiştirilirdi.",
+"Muz":"Muz bir ağaç meyvesi değil, dev bir otsu bitkinin meyvesidir. Ağaç gövdesi gibi görünen kısım, iç içe geçmiş yapraklardan oluşur.",
+"Elma":"Elma suda yüzer, çünkü hacminin yaklaşık dörtte biri havadır.",
+"Ekmek":"Ekmek hamuru, mayanın çıkardığı gaz sayesinde kabarır. Maya, gözle görülmeyen minik canlılardan oluşur.",
+"Portakal":"Türkçedeki «portakal» adının, Portekiz ülkesinden geldiği söylenir; çünkü tatlı portakalı Avrupa'ya Portekizlilerin getirdiği düşünülür.",
+"Üzüm":"Üzüm kurutulunca kuru üzüm olur. Türkiye, dünyanın en çok kuru üzüm üreten ülkelerinden biridir.",
+"Bal":"Bir bal arısı bütün hayatı boyunca yalnızca bir çay kaşığının yaklaşık on ikide biri kadar bal yapar. Bir kavanoz bal için binlerce arı çalışır!",
+"Yumurta":"Yumurtanın sarısı, civcivin besinidir; beyaz kısmı ise onu korur.",
+"Çilek":"Çileğin tohumları aslında dışındadır. Bilim insanları çileğe, gerçek bir meyveden çok «sahte meyve» der.",
+"Dondurma":"Dondurma erirken, içindeki donmuş su ısınıp katıdan sıvıya geçer. Buna erime denir.",
+"Süt":"Süt kalsiyum bakımından zengindir. Kalsiyum, kemiklerimizin ve dişlerimizin sağlam olmasına yardım eder.",
+"Fil":"Filin hortumunda binlerce kas vardır. Fil hortumuyla nefes alır, su içer, koklar ve nesneleri tutar.",
+"Kaplumbağa":"Kaplumbağanın kabuğu omurgasıyla ve kaburgalarıyla birleşiktir; yani kabuğundan çıkamaz.",
+"Aslan":"Aslanlar, kedigiller arasında topluca yaşayan nadir hayvanlardandır. Bir aslan ailesine «sürü» denir.",
+"Penguen":"Penguenler uçamaz ama kanatlarını suda yüzmek için kullanır; suda adeta uçar gibi giderler.",
+"Horoz":"Horozların vücutlarında bir iç saat vardır; bu yüzden ışık olmasa bile her gün hemen hemen aynı saatte öterler.",
+"Baykuş":"Baykuşlar başlarını yaklaşık 270 derece çevirebilir, çünkü gözleri başlarında yerinde sabittir ve oynamaz.",
+"Kelebek":"Kelebek önceden tırtıldır! Hayatı dört aşamadır: yumurta, tırtıl, koza ve kelebek. Bu büyük değişime «başkalaşım» denir.",
+"Ahtapot":"Ahtapotun üç kalbi ve mavi kanı vardır!",
+"Köpek":"Köpeklerin koku alma duyusu insanınkinden binlerce kat daha güçlüdür. Bu yüzden arama kurtarma çalışmalarında yardım ederler.",
+"Kedi":"Kediler günün çoğunu, yaklaşık 12-16 saatini uyuyarak geçirir.",
+"İnek":"İnekler, ancak yavru doğurduktan sonra süt vermeye başlar.",
+"Arı":"Arılar çiçeklerden çiçeklere polen taşıyarak bitkilerin meyve vermesine yardım eder. Buna «tozlaşma» denir.",
+"Zürafa":"Zürafanın boynunda da insanlardaki gibi yedi omur vardır; ama her biri çok uzundur.",
+"Tavşan":"Tavşanın ön dişleri hayatı boyunca uzar. Bu yüzden sürekli bir şeyleri kemirir.",
+"Yunus":"Yunuslar balık değil, memelidir. Havayı akciğerleriyle soluyarak yaşar ve yavrularını sütle besler.",
+"Kurbağa":"Kurbağanın yavrusu önce iribaş olarak suda yaşar, solungaçlarıyla soluk alır. Büyüyünce akciğer kazanır ve karaya çıkar.",
+"Örümcek":"Örümcekler böcek değildir! Böceklerin altı, örümceklerin ise sekiz bacağı vardır.",
+"Maymun":"Maymunlar, insanların da içinde bulunduğu «primatlar» grubundandır; bu yüzden çok zekidir ve el becerileri güçlüdür.",
+"Deve":"Devenin hörgücünde su değil, yağ depolanır. Deve bu yağı enerji olarak kullanır.",
+"Sandalye":"Eskiden sandalyede oturmak bir ayrıcalıktı; çoğunlukla yöneticiler ve zenginler kullanırdı.",
+"Kitap":"Türkiye'de ilk matbaayı 1727'de İbrahim Müteferrika kurdu. Ondan önce kitaplar elle yazıldığı için çok değerliydi.",
+"Tencere":"Metaller ısıyı çok iyi iletir. Bu yüzden tencereler genellikle metalden yapılır.",
+"Saat":"Bir saatin 60 dakika, bir dakikanın 60 saniye olmasının sebebi, çok eski çağlarda Sümer ve Babillilerin 60'lık sayı sistemini kullanmasıdır.",
+"Kalem":"Kurşun kalemin içinde aslında kurşun yoktur; \"kurşun\" denen yazı çubuğu grafit adlı maddedendir.",
+"Tebeşir":"Tebeşir, denizdeki çok küçük canlıların milyonlarca yıl önceki kalıntılarının sıkışmasıyla oluşan bir kayaçtır.",
+"Tarak":"Taraklar binlerce yıldır kullanılıyor. Eski çağlarda kemik, tahta ve fildişinden yapılırdı.",
+"İğne":"Bilinen en eski iğneler kemikten yapılmıştı ve on binlerce yıl öncesine aittir.",
+"Buzdolabı":"Buzdolabı, yiyeceklerde bozulmaya yol açan bakterilerin üremesini yavaşlatır.",
+"Bisiklet":"İlk bisikletlerde pedal yoktu; insanlar ayaklarıyla yeri iterek ilerlerdi.",
+"Gözlük":"Gözlük camları ışığı kırarak, görüntünün gözümüzde net oluşmasına yardım eder.",
+"Şemsiye":"Şemsiye ilk olarak yağmurdan değil, güneşten korunmak için kullanılmıştır.",
+"Anahtar":"Kilit ve anahtarın binlerce yıl önce Eski Mısır'da bile kullanıldığı biliniyor.",
+"Ayna":"Aynada sağ ve sol yer değiştirmiş gibi görünür; çünkü ayna ışığı yansıtıp görüntüyü bize geri gönderir.",
+"Top":"Futbol, dünyanın en çok sevilen ve en çok oynanan sporlarından biridir.",
+"Diş fırçası":"Dişlerimizi günde en az iki kez ve her seferinde yaklaşık iki dakika fırçalamalıyız.",
+"Uçak":"Uçağın kanatları havayı öyle bir keser ki yukarı doğru bir kuvvet doğar ve uçağı havada tutar. İlk motorlu uçuşu 1903'te Wright kardeşler yaptı.",
+"Gemi":"Dev gemiler suda batmaz; çünkü yerinden ettikleri suyun ağırlığı kadar bir yukarı itme kuvveti vardır. Bunu ilk Arşimet bulmuştur.",
+"Makas":"Makas, birbirine bağlı iki bıçaktan oluşan bir kaldıraçtır.",
+"Okul çantası":"Çanta, vücut ağırlığının yaklaşık onda birini geçmemeli; yoksa sırtımızı yorar.",
+"Ev":"Dünyada iglu, çadır, kerpiç ev ve apartman gibi çok farklı ev türleri vardır. Hepsi bölgenin iklimine göre yapılır.",
+"Güneş":"Güneş bir yıldızdır. Işığı Dünya'ya yaklaşık sekiz dakikada ulaşır.",
+"Ay":"Ay'ın kendi ışığı yoktur; Güneş'ten gelen ışığı yansıtarak parlar.",
+"Gökkuşağı":"Güneş ışığı yağmur damlalarına girip kırılınca renklerine ayrılır ve gökkuşağı oluşur.",
+"Kar":"Her kar tanesi altı köşelidir ve iki kar tanesi birbirinin aynısı olmaz.",
+"Bulut":"Bulutlar; çok küçük su damlacıklarından ve buz kristallerinden oluşur.",
+"Yıldız":"Geceleri gördüğümüz yıldızlar çok uzaktadır; ışıkları bize yıllar önce yola çıkmıştır.",
+"Gölge":"Gölge, bir cismin ışığı engellemesiyle oluşur. Güneş tam tepedeyken gölgeler en kısadır.",
+"Ağaç":"Ağaçlar karbondioksiti alıp bize oksijen verir. Kesilmiş bir ağacın gövdesindeki halkaları sayarak yaşını bulabiliriz.",
+"Dünya":"Dünya kendi etrafında 24 saatte, Güneş'in etrafında ise yaklaşık 365 günde döner.",
+"Yağmur":"Su hiç bitmez: buharlaşır, bulut olur, yağmur olarak geri döner. Buna «su döngüsü» denir.",
+"Deniz":"Dünya yüzeyinin yaklaşık yüzde yetmişi denizlerle kaplıdır.",
+"Rüzgâr":"Hava ısınınca yükselir, yerine soğuk hava gelir. Havanın bu hareketine rüzgâr denir.",
+"Uçurtma":"Uçurtmayı yaklaşık iki bin yıl kadar önce Çinliler yapmıştır; ilk uçurtmaların haberleşmede de kullanıldığı söylenir.",
+"Fermuar":"Modern fermuar, 20. yüzyılın başında geliştirildi. Önce ayakkabılarda, sonra giysilerde yaygınlaştı.",
+"Pusula":"Pusula, Dünya'nın manyetik alanıyla çalışır; ibresi hep kuzeyi gösterir.",
+"Mikroskop":"Mikroskopla bakan Robert Hooke, 1665'te mantarda küçük odacıklar gördü ve bunlara «hücre» adını verdi.",
+"Teleskop":"Galileo, teleskopla Jüpiter'in dört büyük uydusunu keşfetti (1610).",
+"Termometre":"İnsan vücudunun normal sıcaklığı yaklaşık 36,5 ile 37 derece arasındadır.",
+"Harita":"Haritalar gerçek yerleri küçülterek gösterir; ölçeğe göre kâğıttaki 1 cm gerçekte yüzlerce metre olabilir.",
+"Sözlük":"Bilinen ilk Türkçe sözlük, Kaşgarlı Mahmud'un 11. yüzyılda yazdığı «Divanü Lügati't-Türk»tür.",
+"Satranç":"Satranç; dikkat, planlama ve sabır geliştirir. Oyunun Hindistan kökenli olduğu kabul edilir.",
+"Ünlü harfler":"Türk alfabesinde 29 harf vardır: 8'i ünlü, 21'i ünsüzdür.",
+"Jüpiter":"Jüpiter'deki «Büyük Kırmızı Leke», Dünya'dan bile büyük, yüzlerce yıldır süren dev bir fırtınadır.",
+"Satürn":"Satürn'ün halkaları buz ve kaya parçalarından oluşur; bazı parçalar kum tanesi, bazıları ev büyüklüğündedir.",
+"Mars":"Mars'ın yüzeyi demir oksit yüzünden kırmızı görünür. Dünya'dan gönderilen araçlar orada araştırma yapıyor.",
+"Merkür":"Merkür, Güneş'in etrafında yaklaşık 88 günde döner; yani bir yılı sadece 88 gündür.",
+"Everest":"Everest 8848 metre yüksekliğindedir; deniz seviyesinden ölçülen en yüksek noktadır.",
+"Ağrı Dağı":"Ağrı Dağı yaklaşık 5137 metre yüksekliğiyle Türkiye'nin en yüksek dağıdır.",
+"Ankara":"Cumhuriyet 29 Ekim 1923'te ilan edilmeden önce, 13 Ekim 1923'te Ankara başkent oldu.",
+"Kızılırmak":"Kızılırmak yaklaşık 1355 kilometre uzunluğundadır ve Türkiye topraklarında doğup yine Türkiye'de denize dökülen en uzun nehirdir.",
+"Şimşek":"Işık sesten çok daha hızlı gider. Bu yüzden şimşeği önce görür, gök gürültüsünü sonra duyarız.",
+"Su":"Su doğada üç halde bulunur: katı (buz), sıvı (su) ve gaz (buhar).",
+"Mavi balina":"Mavi balinanın kalbi küçük bir araba kadardır ve dili bir fil kadar ağır olabilir!",
+"Kutup ayısı":"Kutup ayısının derisi aslında siyahtır; tüyleri ise saydamdır ve ışığı yansıttığı için beyaz görünür.",
+"Yarasa":"Yarasalar çıkardıkları sesin yankısıyla yollarını bulur. Buna «ekolokasyon» denir.",
+"Leylek":"Leylekler kışı sıcak ülkelerde geçirmek için binlerce kilometre göç eder.",
+"Kaktüs":"Kaktüsün dikenleri aslında değişmiş yapraklardır; suyun buharlaşmasını azaltır.",
+"Ayçiçeği":"Genç ayçiçekleri gün boyunca Güneş'i izleyerek yüzlerini ona çevirir.",
+"Soğan":"Soğan doğranınca havaya karışan bir gaz gözlerimizi uyarır; bu yüzden gözümüz yaşarır.",
+"Kalp":"Bir insan kalbi günde yaklaşık 100 bin kez atar.",
+"Akciğer":"Akciğerlerimiz, soluduğumuz havadaki oksijeni kana verir ve karbondioksiti dışarı atar.",
+"Beyin":"Beynimiz vücut ağırlığımızın yaklaşık yüzde 2'si kadardır ama enerjimizin yaklaşık beşte birini kullanır."
+};
+
+// Bilgi sorusu: [soru, doğru, yanlış, yanlış]
+const FQ = {
+"Kelebek":["Kelebek, kelebek olmadan önce ne idi?","Tırtıl","Solucan","Arı"],
+"Bal":["Bir bal arısı bütün hayatında ne kadar bal yapar?","Çay kaşığının yaklaşık on ikide biri kadar","Bir kavanoz dolusu","Bir kova dolusu"],
+"Karpuz":["Karpuzun yaklaşık yüzde kaçı sudur?","Yüzde 92","Yüzde 20","Yüzde 50"],
+"Muz":["Muz hangi tür bitkinin meyvesidir?","Dev bir otsu bitkinin","Palmiye ağacının","Çam ağacının"],
+"Elma":["Elma neden suda yüzer?","İçinde hava bulunduğu için","Çekirdeği olmadığı için","Kırmızı olduğu için"],
+"Ekmek":["Hamurun kabarmasını ne sağlar?","Maya","Tuz","Süt"],
+"Havuç":["Havuçtaki turuncu renk hangi vitaminin kaynağıdır?","A vitamini","D vitamini","K vitamini"],
+"Süt":["Süt hangi madde bakımından zengindir?","Kalsiyum","Bakır","Kurşun"],
+"Fil":["Filin hortumu ne işe yarar?","Nefes alma, su içme ve tutma","Yalnızca koku almak","Yalnızca ses çıkarmak"],
+"Kaplumbağa":["Kaplumbağa kabuğundan çıkabilir mi?","Hayır, kabuğu omurgasıyla birleşiktir","Evet, geceleri çıkar","Evet, yazın çıkar"],
+"Penguen":["Penguenler kanatlarını ne için kullanır?","Yüzmek için","Uçmak için","Kar kazmak için"],
+"Baykuş":["Baykuş başını yaklaşık kaç derece çevirebilir?","270","90","45"],
+"Ahtapot":["Ahtapotun kaç kalbi vardır?","Üç","Bir","Sekiz"],
+"Zürafa":["Zürafanın boynunda kaç omur vardır?","Yedi","Yirmi","Üç"],
+"Tavşan":["Tavşanın hangi organı hayatı boyunca uzar?","Ön dişleri","Kulakları","Kuyruğu"],
+"Yunus":["Yunus hangi canlı grubundandır?","Memeli","Balık","Sürüngen"],
+"Örümcek":["Örümceğin kaç bacağı vardır?","Sekiz","Altı","On iki"],
+"Deve":["Devenin hörgücünde ne depolanır?","Yağ","Su","Kum"],
+"Arı":["Arıların çiçekten çiçeğe polen taşımasına ne denir?","Tozlaşma","Buharlaşma","Erime"],
+"Güneş":["Güneş'in ışığı Dünya'ya yaklaşık kaç dakikada ulaşır?","Sekiz","Bir","Altmış"],
+"Ay":["Ay'ın ışığı nereden gelir?","Güneş'ten yansır","Kendi içinden","Yıldızlardan"],
+"Gökkuşağı":["Gökkuşağı hangi olay sayesinde oluşur?","Işığın su damlalarında kırılması","Rüzgârın esmesi","Şimşeğin çakması"],
+"Kar":["Bir kar tanesi kaç köşelidir?","Altı","Dört","Sekiz"],
+"Su":["Su hangi üç hâlde bulunur?","Katı, sıvı, gaz","Sıcak, soğuk, ılık","Taş, toprak, hava"],
+"Deniz":["Dünyanın yaklaşık ne kadarı denizlerle kaplıdır?","Yüzde yetmişi","Yüzde onu","Yüzde kırkı"],
+"Dünya":["Dünya kendi etrafında yaklaşık kaç saatte döner?","24","12","365"],
+"Kitap":["Türkiye'de ilk matbaayı kim kurdu?","İbrahim Müteferrika","Evliya Çelebi","Piri Reis"],
+"Kalem":["Kurşun kalemin içindeki «kurşun» aslında nedir?","Grafit","Kurşun","Kömür tozu"],
+"Mikroskop":["«Hücre» sözcüğünü ilk kullanan bilim insanı kimdir?","Robert Hooke","Albert Einstein","Newton"],
+"Teleskop":["Galileo teleskopla hangi gezegenin uydularını keşfetti?","Jüpiter","Mars","Venüs"],
+"Jüpiter":["Jüpiter'deki Büyük Kırmızı Leke nedir?","Dev bir fırtına","Bir volkan","Bir göl"],
+"Satürn":["Satürn'ün halkaları neden oluşur?","Buz ve kaya parçalarından","Gazdan","Sudan"],
+"Merkür":["Merkür, Güneş'in etrafında yaklaşık kaç günde döner?","88","365","30"],
+"Mavi balina":["Mavi balina hangi gruptandır?","Memeli","Balık","Kuş"],
+"Kutup ayısı":["Kutup ayısının derisi hangi renktedir?","Siyah","Beyaz","Pembe"],
+"Soğan":["Soğan doğrarken neden ağlarız?","Havaya karışan bir gaz gözümüzü uyardığı için","Soğan çok soğuk olduğu için","Soğan ışık yaydığı için"],
+"Kalp":["Kalbimiz günde yaklaşık kaç kez atar?","Yüz bin","Bin","Bir milyon"],
+"Ağrı Dağı":["Ağrı Dağı yaklaşık kaç metre yüksekliğindedir?","5137","2137","8848"],
+"Kızılırmak":["Kızılırmak hangi denize dökülür?","Karadeniz","Akdeniz","Ege Denizi"],
+"Yarasa":["Yarasalar karanlıkta yollarını nasıl bulur?","Sesin yankısıyla","Gözleriyle","Kokuyla"],
+"Şimşek":["Şimşeği neden gök gürültüsünden önce görürüz?","Işık sesten daha hızlıdır","Gök gürültüsü daha yavaş çıkar","Şimşek daha yüksektedir"],
+"Pusula":["Pusulanın ibresi hangi yönü gösterir?","Kuzeyi","Doğuyu","Güneşi"],
+"Ünlü harfler":["Türkçede kaç ünlü harf vardır?","Sekiz","Beş","Yirmi bir"],
+"Uçak":["İlk motorlu uçuşu kimler yaptı?","Wright kardeşler","Galileo","Edison"],
+"Gemi":["Dev gemiler suda neden batmaz?","Yerinden ettikleri suyun yukarı itme kuvveti vardır","Çok hafif oldukları için","İçleri boş olduğu için"]
+};
+
+// Deyim bilgileri
+const FD = {
+"Ağzı kulaklarına varmak":"Gülümseme o kadar genişlemiş ki ağız kulaklara kadar uzanmış gibi düşünülür. Bu tür abartılı anlatıma «mübalağa» denir.",
+"Gözü tok olmak":"Karşıtı «gözü aç olmak»tır: her gördüğünü isteyen kişi. Karnı tok olmak ile gözü tok olmak farklı şeylerdir.",
+"Kulak vermek":"Deyimlerde göz, kulak, el, kafa gibi vücut organları çok sık geçer. Türkçede bu tür yüzlerce deyim vardır.",
+"Burnu havada olmak":"Burnunu havaya kaldırıp yürüyen kişi, başkalarına yukarıdan bakıyor gibidir. Bu yüzden kibirli kişi için söylenir.",
+"Elini taşın altına koymak":"Ağır bir taşın altına el koymak risklidir. Bu yüzden deyim, bir işte cesaretle sorumluluk almayı anlatır.",
+"Çam devirmek":"Çam devirmek zor ve ağır bir iş gibidir. Bu yüzden yersiz bir söz söyleyip ortamı bozan kişi için «çam devirdi» denir.",
+"Kuş uçmaz kervan geçmez":"Eskiden kervanlar, ticaret yapan insanları ve malları taşırdı. Kervanın bile uğramadığı yer, gerçekten ıssız demektir.",
+"İçi içine sığmamak":"Heyecandan yerinde duramayan kişi, sanki içine sığamayacak kadar coşmuş gibi anlatılır.",
+"Dil dökmek":"Burada «dil», söz anlamındadır. Dil dökmek, güzel sözlerle birini ikna etmeye çalışmaktır.",
+"Göz kulak olmak":"Bu deyimde iki duyu birleşir: göz bakar, kulak dinler. Yani her yönden dikkatle korumak anlatılır.",
+"Ateş pahası":"Ateş gibi yakan bir fiyat! Bir şeyin çok pahalı olması, ateşe dokunmaya benzetilir.",
+"Etekleri zil çalmak":"Neşeden coşan insan, zil çalar gibi çınlıyormuş gibi anlatılır.",
+"Kafa patlatmak":"Çok düşünmekten kafanın patlayacağı hissi anlatılır. Bu da abartıya bir örnektir.",
+"Yüreği ağzına gelmek":"Korkunca kalbimiz hızlı atar. Deyim bunu, yüreğin ağza kadar gelmesi diye abartır.",
+"Eli açık olmak":"Cömert insanın eli açıktır, yani verir. Karşıtı «eli sıkı olmak»tır.",
+"Eli sıkı olmak":"Eli sıkı kişi, para harcamaya kıyamaz. Karşıt anlamlısı «eli açık olmak»tır.",
+"Kulağı kirişte olmak":"Kiriş, yayın gergin ipidir. Deyimin, ok atılmaya hazır gergin bir bekleyişten geldiği düşünülür.",
+"Yelkenleri suya indirmek":"Gemicilerde yelken indirilince gemi ilerleyemez. Bu yüzden deyim, pes etmek anlamına gelir.",
+"Pireyi deve yapmak":"Pire çok küçük, deve çok büyük bir canlıdır. Küçük bir şeyi bu kadar büyütmek abartıdır.",
+"Dut yemiş bülbüle dönmek":"Bülbül güzel öten bir kuştur. Halk arasında, dut yiyince sesinin çıkmadığı söylenir; bu yüzden sessiz kalan kişi için kullanılır.",
+"Gözünü budaktan sakınmamak":"Budak, ağaç dalının çıktığı yerdeki sert çıkıntıdır. Gözünü yaralayabilecek budağı umursamayan kişi, korkusuz demektir.",
+"Dört gözle beklemek":"İki göz yerine dört gözle bakmak, çok dikkatle ve sabırsızca beklemek anlamına gelir.",
+"Üç aşağı beş yukarı":"Tam sayı bilinmediğinde «yaklaşık» demenin renkli bir yoludur. Sayı tam değil, çevresindedir.",
+"Ayağı yere basmamak":"Çok mutlu olan kişi, yürürken uçuyormuş gibi hisseder. Deyim bunu anlatır.",
+"Diken üstünde oturmak":"Dikenin üstüne oturan rahat edemez. Endişeyle ve huzursuzca bekleyen kişi için söylenir.",
+"Gül gibi geçinmek":"Gül, güzellik ve huzur simgesidir. Birbirini üzmeden iyi anlaşan insanlar için söylenir.",
+"Kolları sıvamak":"Çalışmaya başlamadan önce kollar sıvanır; bu yüzden deyim, hevesle işe girişmek demektir.",
+"Bal gibi":"«Bal gibi» sözü bazen «çok güzel ve tatlı» anlamında da kullanılır: «bal gibi çocuk».",
+"Burun kıvırmak":"Beğenmediğimiz bir kokuya burnumuzu kıvırırız. Deyim bunu, beğenmemek için kullanır.",
+"Göz atmak":"Dikkatle okumak yerine hızlıca bakmak demektir. «Göz gezdirmek» de aynı anlamdadır.",
+"Baş üstünde yeri olmak":"Baş, vücudun en yüksek ve değerli yeri sayılır. Çok sevilen ve saygı duyulan kişinin baş üstünde yeri vardır.",
+"Gözden düşmek":"Karşıtı «gözünde yükselmek»tir. Güveni kaybedince, başkalarının gözündeki değerimiz azalır.",
+"Eline su dökemez":"Eskiden birinin eline su dökmek, ona hizmet etmek anlamına gelirdi. Deyimin buradan geldiği söylenir: ona hizmet edecek kadar bile değildir.",
+"Boynu bükük":"Üzülünce başımız öne eğilir, boynumuz bükülür. Üzgün ya da çaresiz kişi böyle durur.",
+"Dilinin ucunda olmak":"Bu durum herkesin başına gelir: bildiğimiz bir sözcüğü o an hatırlayamayız. Bilim insanları buna «dilimin ucunda olma hâli» der.",
+"Gözü pek":"Gözü pek kişi, korkmadan yeni işlere atılır. «Pek» burada «sert, sağlam» anlamındadır.",
+"Ayak uydurmak":"Yürürken başkalarının adımına uymak gibi, ortama uyum sağlamak anlamına gelir.",
+"Göz yummak":"Gözümüzü kapatınca göremeyiz; bir hatayı görmezden gelmek böyle anlatılır. Bu her zaman doğru değildir.",
+"Kulak asmamak":"Kulak asmak «dikkat etmek» demektir; «asmamak» ise önemsememektir.",
+"Taş çatlasa":"Taşın çatlaması çok zor bir şeydir. «Taş çatlasa» sözü, «ne olursa olsun» demenin güçlü bir yoludur.",
+"Pabucu dama atılmak":"Eski ve işe yaramayan pabuçların dama atıldığı söylenir. Deyim, değerini yitiren kişi için kullanılır.",
+"Parmak ısırmak":"Şaşkınlıktan ve hayranlıktan ağzımız açık kalır. Parmağını ısıran kişi hayret etmiştir.",
+"El ele vermek":"İki el birleşince güç artar. «Bir elin nesi var, iki elin sesi var» atasözüyle aynı fikirdedir.",
+"Can kulağıyla dinlemek":"Bütün canımızla, yani tüm dikkatimizle dinlemek demektir.",
+"Nam salmak":"Nam, «ün» demektir. Nam salan kişinin adı uzak yerlere kadar duyulur.",
+"Kıl payı":"Kıl çok ince bir şeydir. Kıl payı, çok küçük bir fark anlamına gelir.",
+"Başa çıkmak":"Bir zorluğun üstesinden gelmek demektir. «Baş etmek» de aynı anlamdadır."
+};
+
+// Atasözü bilgileri (metne göre, süslü parantezsiz)
+const FA = {
+"Damlaya damlaya göl olur":"Küçük birikimler büyür: Her gün 5 yeni kelime öğrenen biri, bir yılda yaklaşık 1800 kelime öğrenir!",
+"Sakla samanı gelir zamanı":"Saman, eskiden hayvanlara kış yemi olurdu. Bugün işe yaramayan şey ileride lazım olabilir.",
+"Bir elin nesi var, iki elin sesi var":"Alkışlamak için iki el gerekir; tek elle ses çıkmaz. İşbirliği gücü artırır.",
+"Ağaç yaşken eğilir":"Fidan kolayca eğilir ama kalın bir ağaç eğilmez. Alışkanlıklar da küçükken kolay edinilir.",
+"Komşu komşunun külüne muhtaçtır":"Eskiden ocağın ateşi sönerse komşudan kor alınırdı. Komşuluk, yardımlaşma demektir.",
+"Sabreden derviş muradına ermiş":"Derviş sade yaşayan ve sabırla bekleyen kişidir. «Murat» ise isteğimiz demektir.",
+"Ayağını yorganına göre uzat":"Yorgan kısaysa ayağını kıvırırsın. Harcamalarını kazancına göre ayarlamak akıllıcadır.",
+"Bugünün işini yarına bırakma":"Yarına bırakılan işler birikir. Zamanı iyi kullanmak başarının anahtarıdır.",
+"Ne ekersen onu biçersin":"Buğday eken buğday biçer. İyilik de kötülük de yapanın karşısına çıkar.",
+"Erken kalkan yol alır":"Sabah zihnimiz dinçtir ve günün uzun bir bölümü önümüzdedir. Erken başlayan çok iş yapar.",
+"Gülü seven dikenine katlanır":"Gülün dikeni vardır. Güzel bir şeye ulaşmak için küçük zorluklara katlanmak gerekir.",
+"Çok yaşayan bilmez, çok gezen bilir":"Gezmek yeni yerleri, insanları ve kültürleri tanıtır. Deneyim bilgiyi artırır.",
+"Atı alan Üsküdar'ı geçti":"Üsküdar, İstanbul'da bir semttir. At alan kişi çoktan uzaklaşmıştır; yani fırsat kaçmıştır.",
+"Dost acı söyler":"Gerçek dost, seni kırmak için değil, doğrusunu öğrenesin diye açık konuşur.",
+"Ak akçe kara gün içindir":"Akçe, eskiden kullanılan gümüş paraydı. Kara gün ise zor zamandır. Tasarruf etmek akıllıcadır.",
+"Bin bilsen de bir bilene danış":"Bilim insanları da birbirine danışır. Farklı fikirler hata yapma ihtimalini azaltır.",
+"Rüzgâr eken fırtına biçer":"Rüzgâr sürekli eserse fırtınaya dönüşür. Kötülük de büyüyerek sahibine geri döner.",
+"Hatasız kul olmaz":"«Kul», insan demektir. Hatadan öğrenmek, büyümenin bir parçasıdır.",
+"Tatlı dil yılanı deliğinden çıkarır":"Güzel ve nazik konuşmak, en inatçı kişiyi bile yumuşatır.",
+"Sütten ağzı yanan yoğurdu üfleyerek yer":"Sıcak süt içip dili yanan kişi, soğuk yoğurdu bile üfler. Bir kere zarar gören her şeyden çekinir.",
+"Kervan yolda düzülür":"Kervan yola çıkınca eksikler yolda tamamlanır. Her şeyin tam hazır olmasını beklemeden başlamak gerekir.",
+"Bir fincan kahvenin kırk yıl hatırı vardır":"Eskiden misafire kahve ikramı çok değerliydi. Türk kahvesi kültürü 2013'te UNESCO listesine alındı.",
+"Yalancının mumu yatsıya kadar yanar":"Yatsı, akşam karanlığından yaklaşık bir iki saat sonraki vakittir. Mum erken söner; yalan da uzun sürmez.",
+"Balık baştan kokar":"Balık bozulurken önce baş kısmının koktuğu söylenir. Yönetimdeki bozukluk da her yere yayılır.",
+"Ne verirsen elinle, o gider seninle":"Yaptığımız iyilikler gelecekte bize döner; onlar bizimle gider.",
+"Üzüm üzüme baka baka kararır":"Üzümler güneşte olgunlaşınca renk değiştirir. İnsanlar da çevrelerine bakarak etkilenir.",
+"Her yiğidin bir yoğurt yiyişi vardır":"Yoğurdu kimi şekerle, kimi tuzla yer. Herkesin kendi yöntemi olabilir.",
+"Güneş girmeyen eve doktor girer":"Güneş ışığı, vücudumuzun D vitamini yapmasına yardım eder. Bu da sağlığımız için önemlidir.",
+"Sabır acıdır, meyvesi tatlıdır":"Bir ağaç dikip meyvesini beklemek gibi: Sabır zordur ama sonucu güzeldir.",
+"Bir çiçekle bahar olmaz":"Tek bir çiçek baharın geldiğini kanıtlamaz. Bir örneğe bakarak genelleme yapmamalıyız; bilimde de «tek örnek yetmez».",
+"Gözden ırak olan gönülden de ırak olur":"«Irak», uzak demektir. Uzaktaki dostlarla bağımızı mektup ve telefonla sürdürebiliriz.",
+"İki gönül bir olunca samanlık seyran olur":"Seyran, güzel bir manzarayı gezerek seyretmektir. Sevgi dolu iki insan için en yoksul yer bile güzeldir.",
+"Taşıma suyla değirmen dönmez":"Değirmen akan suyla döner. Bir işin sürmesi için kalıcı bir kaynak gerekir; sürekli başkasından yardım beklenmez.",
+"Sel gider kum kalır":"Sel suyu götürür ama kum kalır. Geçici sıkıntılar geçer, kalıcı değerler kalır.",
+"Aç ayı oynamaz":"Eskiden ayı oynatan gezginler vardı. Aç hayvan oynamaz; karnı aç insan da iyi iş yapamaz.",
+"Yanlış hesap Bağdat'tan döner":"Bağdat, bugün Irak'ın başkentidir ve çok uzaktadır. Yanlış yapılan hesap en uzak yerden bile geri döner.",
+"Akıl akıldan üstündür":"Birlikte düşünmek tek başına düşünmekten güçlüdür. Takım çalışmasının temeli de budur.",
+"Çivi çiviyi söker":"Duvardaki bir çiviyi çıkarırken başka bir çivi yardım edebilir. Bir güçlük bazen başka bir şeyle çözülür.",
+"Zararın neresinden dönülse kârdır":"Yanlış bir yola devam edip daha çok zarar görmektense, fark edince dönmek daha iyidir.",
+"Sürüden ayrılanı kurt kapar":"Sürüdeki hayvanlar kurda karşı birbirini korur. Yalnız kalan hayvan tehlikededir.",
+"Mum dibine ışık vermez":"Mumun tam altı gölgede kalır! En yakınımızdakilerin değerini bazen göremeyiz.",
+"Söz gümüşse sükût altındır":"Sükût, susmak demektir. Gümüş değerlidir, altın daha değerlidir: Bazen susmak konuşmaktan daha doğrudur.",
+"Beş parmağın beşi bir değil":"Parmaklarımızın hepsi farklı uzunlukta ve işte. İnsanlar da böyledir; bu bir zenginliktir."
+};
+
+// Tekerleme bilgileri
+const FT = {
+"Berber":"Tekerlemeler aynı sesle başlayan sözcükleri art arda söyletir; buna «aliterasyon» denir. Dilimizi ve kulağımızı çok iyi eğitir.",
+"Sarımsak":"Bu tekerlemede «saklasak» ve «sarımsaklasak» sözcükleri birbirine çok benzer; zorluk bu benzerlikten gelir.",
+"Şapkacı":"Ş sesini söylerken dilimiz damağa yaklaşır ama dokunmaz.",
+"Kara Kedi":"Yazarlar bazen bir sesi tekrar ederek metne müzik katar. Bu ritim ezber için de iyidir.",
+"Pembe Pabuç":"P ve B sesleri dudaklarımızı birleştirerek çıkar. Bu yüzden bu tekerlemede dudak hareketi önemlidir.",
+"Çıtır Çerez":"«Çıtır çıtır» gibi, sesi taklit eden sözcüklere «yansıma» denir.",
+"Leylek":"Leylekler her yıl uzun yollar göç eden kuşlardır ve Türk kültüründe sevilen bir simgedir.",
+"Mavi Martı":"Martılar deniz kenarında yaşar, çok iyi uçar ve balık avlar.",
+"Zeynep":"Z ve S sesi benzerdir; z titreşimlidir, s titreşimsizdir. Boğazına elini koyup dene!",
+"Tavuk":"T sesini çıkarırken dilimizin ucu üst dişlerimizin arkasına çarpar.",
+"Elma":"E, Türkçedeki sekiz ünlüden biridir. Ünlüler çok olunca söylemek daha akıcı olur.",
+"Su":"Bu tekerlemede «su» sözcüğü tekrar tekrar geçer. Sözcük tekrarı da ritim oluşturur.",
+"Arı":"Ünlüyle başlayan sözcükler art arda gelince nefes almak zorlaşır; sakin söylemek gerekir.",
+"Dede":"D ve T sesleri benzerdir ama d titreşimlidir, t titreşimsizdir.",
+"Çamlıca":"Çamlıca, İstanbul'da Üsküdar tarafındaki bir tepedir ve oradan Boğaz'ı görmek mümkündür.",
+"Gül Bahçesi":"Türkiye'de gül özellikle Isparta'da yetiştirilir ve gül yağı yapılır.",
+"Yunus":"Yunuslar çok zekidir ve birbirleriyle ıslığa benzer seslerle haberleşir.",
+"Nine":"Ninni, bebekleri uyutmak için söylenen şarkıdır. Türk kültürünün güzel bir geleneğidir.",
+"Hocamız":"Hikâye anlatmak, insanlığın en eski öğretme yollarından biridir.",
+"Ressam":"R sesi Türkçenin söylemesi zor seslerinden biridir; birçok çocuk bu sesi daha sonra kazanır.",
+"Fil":"Fil, karada yaşayan en büyük hayvandır.",
+"Kırk Küp":"«Kırk» sayısı Türk kültüründe «çok» anlamında da kullanılır: kırk yıllık dost, kırk satır gibi."
+};
+
+// Fıkra bilgileri
+const FF = {
+"Ya Tutarsa":"Nasreddin Hoca, 13. yüzyılda yaşadığı söylenen ve Akşehir'le anılan bir halk bilgesidir.",
+"Anahtar":"Bu fıkra bilimde bile bilinir: İnsanlar aramayı çoğu zaman kolay olan yerde yapar. Buna «sokak lambası etkisi» denir.",
+"Ye Kürküm Ye":"Nasreddin Hoca fıkraları Balkanlar'dan Orta Asya'ya, Orta Doğu'dan Çin'e kadar pek çok yerde anlatılır.",
+"Ceviz ve Kabak":"Ceviz ağaçları 25 metreye kadar uzayabilir. Kabak ise yerde sürünerek büyüyen bir bitkidir.",
+"Dalı Kesen Hoca":"Bir şeyin sonucunu önceden tahmin etmeye «çıkarım yapmak» denir. Hoca bunu yapmamış!",
+"Timur ve Hoca":"Fıkradaki Timur, tarihte Orta Asya'da yaşamış güçlü bir hükümdarın adıdır.",
+"Eşek ve Oğul":"Bu konu dünyada pek çok kültürde anlatılır; en ünlü hâli Ezop masallarındadır.",
+"Ciğer":"Eskiden tartı için terazi ve kantar kullanılırdı. Hoca da bunlardan birini kullanmış olmalı!",
+"Kuyudaki Ay":"Durgun su ayna gibi davranır. Gökyüzündeki Ay'ın yansımasını suda görmemiz bu yüzden mümkündür.",
+"Ay mı Güneş mi?":"Ay'ın kendi ışığı yoktur. Güneş ışığını yansıtır ve geceleri bu yüzden parlar.",
+"Haklısın Hoca":"Bu fıkra mantıkta «çelişki» kavramını anlatır: Aynı anda iki zıt şey doğru olamaz.",
+"Bilenler Bilmeyenlere":"Öğrendiğini başkasına anlatan kişi, onu çok daha iyi hatırlar."
+};
+
+// ===== 9 YAŞ SEVİYESİ: ek ve daha zor içerik =====
+const HARD0 = { bil: BILMECE.length, dey: DEYIM.length, ata: ATASOZU.length, tek: TEKERLEME.length, fik: FIKRA.length };
+
+// grup: y yiyecek/bitki, h hayvan, e eşya, d doğa/uzay/yer, v vücut, k dil
+BILMECE.push(
+["Kuyruğu var ama hayvan değildir. Rüzgârla havalanır, ipi hep elimizdedir.","Uçurtma","🪁","e"],
+["Dişleri var ama ısırmaz. Çanta ve montların ağzını açıp kapatır.","Fermuar","🧥","e"],
+["İğnesi hep aynı yöne bakar. Yolunu kaybedenlerin en iyi arkadaşıdır.","Pusula","🧭","e"],
+["Gözümüzün göremediği minik canlıları kocaman gösterir. Bilim insanlarının vazgeçilmezidir.","Mikroskop","🔬","e"],
+["Çok uzaktaki yıldızları ve gezegenleri yakına getirir.","Teleskop","🔭","e"],
+["Hasta olunca koltuğumuzun altına koyarız. Ateşimizi sayılarla söyler.","Termometre","🌡️","e"],
+["Koca dünyayı bir kâğıda sığdırır. Yolumuzu bulmak için ona bakarız.","Harita","🗺️","e"],
+["Binlerce kelimenin anlamını içinde saklar. Alfabe sırasına göre dizilidir.","Sözlük","📚","k"],
+["Karelerden oluşan siyah beyaz bir tahtada oynanır. Şah, vezir, at ve fil onun taşlarıdır.","Satranç","♟️","e"],
+["Türkçede sekiz tanedir: a, e, ı, i, o, ö, u, ü. Söylerken sesimiz hiçbir yere takılmaz. Bunlara ne denir?","Ünlü harfler","🔤","k"],
+["Güneş sisteminin en büyük gezegenidir. Üzerinde yüzlerce yıldır süren dev bir fırtına var.","Jüpiter","🪐","d"],
+["Etrafında buz ve kaya parçalarından oluşan parlak halkalar bulunan gezegendir.","Satürn","🪐","d"],
+["Kızıl gezegen diye bilinir. Toprağındaki demir yüzünden kırmızı görünür.","Mars","🔴","d"],
+["Güneş'e en yakın gezegendir ve en küçüğüdür.","Merkür","⚫","d"],
+["Dünyanın en yüksek dağıdır. Zirvesine çıkmak için cesur dağcılar yıllarca hazırlanır.","Everest","⛰️","d"],
+["Türkiye'nin en yüksek dağıdır. Doğu Anadolu'da yer alır, zirvesi hep karlıdır.","Ağrı Dağı","🏔️","d"],
+["Türkiye'nin başkentidir. Anıtkabir bu şehirdedir.","Ankara","🏛️","d"],
+["Türkiye'nin en uzun nehridir. Kırmızımsı suyuyla uzun yol gidip Karadeniz'e dökülür.","Kızılırmak","🏞️","d"],
+["Önce o parlar, sonra gök gürler. Işığı hızlı olduğu için onu önce görürüz.","Şimşek","⚡","d"],
+["Canlılar onsuz yaşayamaz. Isınınca buharlaşır, donunca buz olur.","Su","💧","d"],
+["Dünyanın en büyük hayvanıdır. Denizde yaşar ama balık değil, memelidir.","Mavi balina","🐋","h"],
+["Karlı yerlerde yaşar, yüzmeyi çok iyi bilir. Fok avlar, tüyleri beyaz görünür.","Kutup ayısı","🐻","h"],
+["Memelidir ama uçar. Geceleri avlanır, karanlıkta sesin yankısıyla yolunu bulur.","Yarasa","🦇","h"],
+["Uzun bacaklı, uzun gagalı bir kuştur. Kışın sıcak ülkelere göç eder, ilkbaharda çatıdaki yuvasına döner.","Leylek","🐦","h"],
+["Çölde yaşar, yaprakları diken gibidir. Gövdesinde sakladığı suyla susuzluğa dayanır.","Kaktüs","🌵","y"],
+["Sarı yapraklı kocaman bir çiçektir. Tohumlarından yağ çıkarılır, çerezi de yapılır.","Ayçiçeği","🌻","y"],
+["Kat kat soyulur. Doğrarken gözlerimizi yaşartır, yemeklerin vazgeçilmezidir.","Soğan","🧅","y"],
+["Göğsümüzün solunda durur. Hiç durmadan atar ve kanı bütün vücuda pompalar.","Kalp","❤️","v"],
+["İki tanedir, göğsümüzde durur. Nefes alınca şişer, verince söner.","Akciğer","🌬️","v"],
+["Kafatasının içinde durur. Düşünmemizi, hatırlamamızı ve hareket etmemizi yönetir.","Beyin","🧠","v"]
+);
+
+DEYIM.push(
+["Gözden düşmek","Değerini ve saygınlığını kaybetmek","Yalan söyleyince arkadaşlarının {gözünden düştü}.","📉"],
+["Eline su dökemez","Onunla kıyaslanamaz, ondan çok geridedir","Satrançta ona kimse {eline su dökemez}.","🥇"],
+["Boynu bükük","Üzgün ve çaresiz","Maçı kaybedince {boynu bükük} eve döndü.","😞"],
+["Dilinin ucunda olmak","Bildiği bir şeyi o an hatırlayıp söyleyememek","Şarkının adı {dilimin ucunda} ama bir türlü çıkaramıyorum.","🤔"],
+["Gözü pek","Korkusuz, atılgan","{Gözü pek} bir çocuktu, karanlık odaya hemen girdi.","🦁"],
+["Ayak uydurmak","Çevreye ve yeni duruma uyum sağlamak","Yeni okulunda arkadaşlarına çabuk {ayak uydurdu}.","🚶"],
+["Göz yummak","Bir hatayı görmezden gelmek","Öğretmenimiz ilk hatama {göz yumdu}.","🙈"],
+["Kulak asmamak","Söyleneni dinlememek, önemsememek","Uyarıya {kulak asmadı} ve yağmurda ıslandı.","🙉"],
+["Taş çatlasa","Ne olursa olsun, en geç","{Taş çatlasa} yarın akşama kadar bitiririm.","🪨"],
+["Pabucu dama atılmak","Değerini yitirip yerine başkasının geçmesi","Yeni oyuncu gelince eski kalecinin {pabucu dama atıldı}.","👞"],
+["Parmak ısırmak","Çok şaşırmak, hayran kalmak","Resmini görenler {parmak ısırdı}.","😲"],
+["El ele vermek","Birlikte, birbirine yardım ederek çalışmak","Sınıf olarak {el ele verip} bahçeyi temizledik.","🤝"],
+["Can kulağıyla dinlemek","Çok dikkatle, bütün ilgisiyle dinlemek","Dedemin masalını {can kulağıyla} dinledik.","🎧"],
+["Nam salmak","Ünlenmek, her yerde tanınmak","Yaptığı lezzetli baklavalarla {nam saldı}.","🏅"],
+["Kıl payı","Çok az farkla, ucu ucuna","Düşmekten {kıl payı} kurtuldu.","😅"],
+["Başa çıkmak","Bir zorluğun üstesinden gelmek","Zor bir soruyla tek başına {başa çıktı}.","🏆"]
+);
+
+ATASOZU.push(
+["Bir çiçekle {bahar} olmaz","Tek bir olumlu örnek, genel bir sonuç için yeterli değildir.","🌸"],
+["Gözden ırak olan {gönülden} de ırak olur","Uzakta kalan insanlar zamanla unutulur.","🛤️"],
+["İki gönül bir olunca {samanlık} seyran olur","Anlaşan, birbirini seven insanlar zor şartlarda bile mutlu olur.","💞"],
+["Taşıma suyla {değirmen} dönmez","Sürekli başkasının yardımıyla iş yürümez; kendi kaynağın olmalı.","⚙️"],
+["Sel gider {kum} kalır","Geçici sıkıntılar geçer, kalıcı olan şeyler kalır.","🌊"],
+["Aç ayı {oynamaz}","Karnı aç olan kişi iyi iş yapamaz; önce ihtiyaçlar karşılanmalı.","🐻"],
+["Yanlış hesap {Bağdat'tan} döner","Yanlış yapılan bir iş, sonunda mutlaka düzeltilir.","🧮"],
+["Akıl {akıldan} üstündür","Bir işte başkasının fikri de işe yarar; danışmak iyidir.","💡"],
+["Çivi çiviyi {söker}","Bir güçlüğü bazen başka bir şey ortadan kaldırır.","🔨"],
+["Zararın neresinden dönülse {kârdır}","Yanlış bir işe devam etmektense vazgeçmek daha iyidir.","✂️"],
+["Sürüden ayrılanı {kurt} kapar","Topluluktan ayrı kalan kişi tehlikeye açık olur.","🐺"],
+["Mum dibine ışık {vermez}","İnsan bazen en yakınındaki değerli şeyi fark edemez.","🕯️"],
+["Söz gümüşse {sükût} altındır","Bazen susmak konuşmaktan daha değerlidir.","🤫"],
+["Beş {parmağın} beşi bir değil","Her insan farklıdır, herkes aynı özelliklere sahip değildir.","✋"]
+);
+
+TEKERLEME.push(
+["Çamlıca","Çamlıca'da çam çiçeği çıtır çıtır çatırdamış, çocuklar çevresinde çember çizmiş.","ç"],
+["Gül Bahçesi","Gül dalında güzel güller, güneşe gülümseyen güllere güvercin gelmiş.","g"],
+["Yunus","Yedi yaşında yeşil yelekli yürekli yavru yunus yüzmüş.","y"],
+["Nine","Nine ninni söyleyince nehir nazlı nazlı akmış, nilüfer neşeyle uyumuş.","n"],
+["Hocamız","Hızlı hızlı harfleri harmanlayan hocamız hepimize hikâye anlatmış.","h"],
+["Ressam","Ressam Rıza rengârenk resimleri raflara rahatça resmetmiş.","r"],
+["Fil","Fil fısıldayınca fare fırlayıp fındık fırlatmış.","f"],
+["Kırk Küp","Kırk küpü kıran kırk kişi kırık küpleri kırk günde kırk kapıya kaldırmış.","k"]
+);
+
+FIKRA.push(
+["Haklısın Hoca","Bir gün komşusu Hoca'ya gelip derdini anlatmış. Hoca onu dinleyip \"Haklısın\" demiş. Sonra öbür komşu gelip kendi tarafını anlatmış. Hoca ona da \"Haklısın\" demiş. Karısı olanları duymuş: \"Efendi, ikisi birden haklı olamaz!\" Hoca bir düşünmüş: \"Hanım, sen de haklısın!\"","Karısı Hoca'ya ne demiş?",["İkisi birden haklı olamaz","Sen çok yoruldun","Komşuları kapıdan kov"],["Karar vermeden önce olayın iki tarafını da dinlemeliyiz","Her söyleyene hemen \"haklısın\" demeliyiz","Komşularla hiç konuşmamalıyız"]],
+["Bilenler Bilmeyenlere","Hoca bir gün kürsüye çıkıp halka seslenmiş: \"Size ne anlatacağımı biliyor musunuz?\" \"Bilmiyoruz\" demişler. Hoca: \"Bilmeyenlere anlatmaya gerek yok\" deyip inmiş. Ertesi gün aynı soruyu sormuş, bu sefer herkes \"Biliyoruz\" demiş. Hoca: \"Bilenlere anlatmaya gerek yok\" demiş. Üçüncü gün yine sormuş. Bir kısmı \"Biliyoruz\", bir kısmı \"Bilmiyoruz\" demiş. Hoca: \"Bilenler bilmeyenlere anlatsın!\" demiş.","Hoca üçüncü gün ne yapılmasını istemiş?",["Bilenlerin bilmeyenlere anlatmasını","Herkesin eve gitmesini","Konuşmanın ertelenmesini"],["Bildiklerimizi paylaşmak herkesin öğrenmesine yardım eder","Bilmediğimiz şeyi hiç sormamalıyız","Kürsüye çıkmak çok zordur"]]
+);
+</script>
+<script>// ===== ZEKA ORMANI - uygulama kodu =====
+const $ = s => document.querySelector(s);
+const rnd = n => Math.floor(Math.random() * n);
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = rnd(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const lc = s => s.toLocaleLowerCase('tr-TR');
+const uc = s => s.toLocaleUpperCase('tr-TR');
+const today = () => { const d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); };
+const yesterday = () => { const d = new Date(Date.now() - 864e5); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); };
+
+// ---------- Durum ----------
+const KEY = 'zekaormani_v1';
+function defState() { return { name: '', pts: 0, facts: {}, seen: {}, mast: {}, stick: [], hat: '', last: '', streak: 0, best: {}, unl: {}, rounds: 0, set: { music: true, sfx: true, voice: true } }; }
+let S = (() => { try { const d = JSON.parse(localStorage.getItem(KEY)); if (d) return Object.assign(defState(), d, { set: Object.assign(defState().set, d.set || {}) }); } catch (e) { } return defState(); })();
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } }
+const level = () => 1 + Math.floor(S.pts / 100);
+const title = () => TITLES[Math.min(level() - 1, TITLES.length - 1)];
+
+// ---------- İçerik ----------
+const ITEMS = {
+  bil: BILMECE.map((r, i) => ({ id: 'b' + i, q: r[0], a: r[1], e: r[2], g: r[3], f: FB[r[1]], fq: FQ[r[1]], hard: i >= HARD0.bil })),
+  dey: DEYIM.map((r, i) => ({ id: 'd' + i, n: r[0], m: r[1], s: r[2], e: r[3], f: FD[r[0]], hard: i >= HARD0.dey })),
+  ata: ATASOZU.map((r, i) => { const t = r[0].replace(/[{}]/g, ''); return { id: 'a' + i, t, raw: r[0], gap: r[0].match(/\{(.*?)\}/)[1], m: r[1], e: r[2], f: FA[t], hard: i >= HARD0.ata }; }),
+  tek: TEKERLEME.map((r, i) => ({ id: 't' + i, n: r[0], t: r[1], h: r[2], f: FT[r[0]], hard: i >= HARD0.tek })),
+  fik: FIKRA.map((r, i) => ({ id: 'f' + i, n: r[0], x: r[1], q: r[2], o: r[3], d: r[4], f: FF[r[0]], hard: i >= HARD0.fik }))
+};
+function learnFact(id) {
+  if (S.facts[id]) return; S.facts[id] = 1; const n = Object.keys(S.facts).length; addPts(3);
+  if (n % 10 === 0) evQ.push({ t: 'info', n }); save();
+}
+const factBox = f => f ? `<div class="fb" style="background:#fff7d6">🤓 <b>Biliyor muydun?</b><br>${f}</div>` : '';
+const SEC = [
+  { id: 'bil', name: 'Bilmece Bahçesi', e: '🧩', col: '#8b5cf6', need: 0, desc: 'Bilmeceleri çöz, cevabı bul!' },
+  { id: 'tek', name: 'Tekerleme Tepesi', e: '🎵', col: '#ec4899', need: 60, desc: 'Dilini dolaştıran tekerlemeler!' },
+  { id: 'oyn', name: 'Oyun Parkı', e: '🎡', col: '#ef4444', need: 100, desc: 'Eğlenceli oyunlar seni bekliyor!' },
+  { id: 'dey', name: 'Deyim Denizi', e: '🌊', col: '#0ea5e9', need: 160, desc: 'Deyimlerin gizli anlamlarını keşfet!' },
+  { id: 'ata', name: 'Atasözü Dağı', e: '⛰️', col: '#16a34a', need: 320, desc: 'Atalarımızın bilgece sözleri!' },
+  { id: 'fik', name: 'Fıkra Kalesi', e: '🏰', col: '#f59e0b', need: 520, desc: 'Nasreddin Hoca ile gül, düşün!' },
+  { id: 'haz', name: 'Bilgelik Hazinesi', e: '👑', col: '#d4a006', need: 800, desc: 'Büyük final! Her şeyden karışık sorular, çifte puan!' }
+];
+const secOf = id => SEC.find(s => s.id === id);
+const GAMES = [
+  { id: 'mem', name: 'Hafıza Kartları', e: '🃏', need: 100, desc: 'Resmi kelimeyle eşleştir', col: '#8b5cf6' },
+  { id: 'bal', name: 'Balon Patlat', e: '🎈', need: 220, desc: 'Bilmecenin cevabını patlat', col: '#ec4899' },
+  { id: 'mat', name: 'Deyim Eşleştir', e: '🔗', need: 380, desc: 'Deyimi anlamıyla bul', col: '#0ea5e9' },
+  { id: 'srt', name: 'Atasözü Sırala', e: '🧱', need: 560, desc: 'Karışık kelimeleri sıraya diz', col: '#16a34a' }
+];
+const learned = id => ITEMS[id].filter(x => (S.mast[x.id] || 0) >= 2).length;
+
+// ---------- Ses ----------
+const A = {
+  ctx: null, step: 0, next: 0, mood: 'menu',
+  init() {
+    if (this.ctx) { if (this.ctx.state === 'suspended') this.ctx.resume(); return; }
+    try {
+      const C = window.AudioContext || window.webkitAudioContext; if (!C) return;
+      const c = this.ctx = new C();
+      this.mg = c.createGain(); this.mg.gain.value = .9; this.mg.connect(c.destination);
+      this.mus = c.createGain(); this.mus.gain.value = .5; this.mus.connect(this.mg);
+      this.sfx = c.createGain(); this.sfx.gain.value = .9; this.sfx.connect(this.mg);
+      this.next = c.currentTime + .2;
+      setInterval(() => this.sched(), 70);
+    } catch (e) { }
+  },
+  tone(f, t, d, type, v, dest, f2) {
+    const c = this.ctx; if (!c) return;
+    const o = c.createOscillator(), g = c.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + d);
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(v, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+    o.connect(g); g.connect(dest); o.start(t); o.stop(t + d + .05);
+  },
+  bpm() { return this.mood === 'play' ? 118 : 96; },
+  sched() {
+    const c = this.ctx; if (!c) return;
+    if (!S.set.music || c.state !== 'running') { this.next = c.currentTime + .15; return; }
+    while (this.next < c.currentTime + .25) { this.play(this.step, this.next); this.next += 30 / this.bpm(); this.step++; }
+  },
+  play(step, t) {
+    const CH = [[261.63, 329.63, 392], [220, 261.63, 329.63], [174.61, 220, 261.63], [196, 246.94, 293.66]];
+    const BS = [130.81, 110, 87.31, 98];
+    const SC = [523.25, 587.33, 659.25, 783.99, 880, 1046.5];
+    const PAT = [
+      [2, -1, 3, 2, 0, -1, 1, -1, 2, -1, 4, 3, 2, -1, -1, -1],
+      [4, -1, 3, 2, 3, -1, 1, -1, 0, 1, 2, -1, 3, -1, 2, -1],
+      [0, 2, 4, 2, 3, -1, 2, -1, 1, 3, 5, 3, 4, -1, -1, -1]
+    ];
+    const bar = Math.floor(step / 8) % 4, pos = step % 8;
+    if (step % 32 === 0) this.pat = PAT[rnd(3)];
+    const play = this.mood === 'play';
+    if (pos === 0 || pos === 4) this.tone(BS[bar], t, .5, 'triangle', .3, this.mus);
+    if (play ? true : pos % 2 === 0) this.tone(CH[bar][pos % 3] * 2, t, .25, 'sine', .07, this.mus);
+    const mi = (this.pat || PAT[0])[(step % 16)];
+    if (mi >= 0 && (play || step % 16 < 8 || Math.random() < .5)) this.tone(SC[mi], t, .32, 'triangle', .13, this.mus);
+    if (play && pos % 2 === 1) this.tone(8000, t, .03, 'square', .01, this.mus);
+  },
+  s(kind) {
+    if (!this.ctx || !S.set.sfx) return; const c = this.ctx, t = c.currentTime, d = this.sfx;
+    const seq = (a, step, ty, v, dur) => a.forEach((f, i) => this.tone(f, t + i * step, dur || .22, ty || 'triangle', v || .22, d));
+    if (kind === 'ok') seq([523, 659, 784, 1046], .07, 'triangle', .25);
+    else if (kind === 'no') { this.tone(330, t, .25, 'sine', .22, d, 220); }
+    else if (kind === 'click') this.tone(760, t, .07, 'sine', .15, d);
+    else if (kind === 'coin') seq([1318, 1760], .08, 'square', .08, .25);
+    else if (kind === 'win') seq([523, 659, 784, 1046, 784, 1046, 1318], .11, 'triangle', .26, .3);
+    else if (kind === 'pop') this.tone(900, t, .12, 'sine', .25, d, 120);
+    else if (kind === 'chest') this.tone(200, t, .6, 'sawtooth', .08, d, 900);
+    else if (kind === 'flip') this.tone(500, t, .08, 'sine', .12, d, 700);
+    else if (kind === 'lvl') seq([392, 523, 659, 784, 1046, 1318, 1568], .09, 'triangle', .26, .35);
+  }
+};
+document.addEventListener('pointerdown', () => A.init());
+document.addEventListener('visibilitychange', () => { if (!A.ctx) return; if (document.hidden) A.ctx.suspend(); else A.ctx.resume(); });
+
+function speak(t, rate) {
+  if (!S.set.voice && rate !== 'force') return;
+  forceSpeak(t, rate === 'force' ? .9 : (rate || .9));
+}
+function forceSpeak(t, rate) {
+  try {
+    if (window.Android && Android.speakRate) { Android.speakRate(t, rate || .9); return; }
+    if (window.speechSynthesis) { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'tr-TR'; u.rate = rate || .9; speechSynthesis.speak(u); }
+  } catch (e) { }
+}
+const plain = h => h.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+// ---------- Konfeti ----------
+let fxRun = false;
+function confetti(n = 110) {
+  const cv = $('#fx'); const dpr = 1; cv.width = innerWidth; cv.height = innerHeight; const g = cv.getContext('2d');
+  const cols = ['#f43f5e', '#f59e0b', '#22c55e', '#0ea5e9', '#8b5cf6', '#ec4899', '#facc15'];
+  const P = []; for (let i = 0; i < n; i++) P.push({ x: innerWidth / 2 + (Math.random() - .5) * 120, y: innerHeight * .45, vx: (Math.random() - .5) * 16, vy: -Math.random() * 16 - 4, w: 6 + Math.random() * 8, h: 4 + Math.random() * 7, c: cols[rnd(cols.length)], r: Math.random() * 6, vr: (Math.random() - .5) * .4 });
+  const t0 = performance.now(); fxRun = true;
+  (function f(t) {
+    g.clearRect(0, 0, cv.width, cv.height); let alive = 0;
+    P.forEach(p => { p.vy += .45; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.vx *= .99; if (p.y < innerHeight + 20) alive++; g.save(); g.translate(p.x, p.y); g.rotate(p.r); g.fillStyle = p.c; g.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); g.restore(); });
+    if (alive && t - t0 < 3500) requestAnimationFrame(f); else { g.clearRect(0, 0, cv.width, cv.height); fxRun = false; }
+  })(t0);
+}
+function floatTxt(txt, el) {
+  const d = document.createElement('div'); d.className = 'float'; d.textContent = txt;
+  let x = innerWidth / 2 - 30, y = innerHeight / 2;
+  if (el) { const r = el.getBoundingClientRect(); x = r.left + r.width / 2 - 20; y = r.top; }
+  d.style.left = x + 'px'; d.style.top = y + 'px'; document.body.appendChild(d); setTimeout(() => d.remove(), 1200);
+}
+
+// ---------- Baykuş ----------
+function owl(sz) {
+  return `<div class="owlbox ${sz || ''}"><svg class="owl" viewBox="0 0 120 130"><g class="o-body">
+<ellipse cx="60" cy="125" rx="28" ry="5" fill="rgba(0,0,0,.12)"/>
+<path d="M24 46 L30 6 L52 30Z" fill="#8a5630"/><path d="M96 46 L90 6 L68 30Z" fill="#8a5630"/>
+<ellipse cx="60" cy="80" rx="42" ry="42" fill="#a86b3c"/><ellipse cx="60" cy="90" rx="27" ry="29" fill="#f8e3bd"/>
+<path d="M48 84q4 4 8 0M64 84q4 4 8 0M48 98q4 4 8 0M64 98q4 4 8 0" stroke="#d9b98a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<ellipse class="wl" cx="20" cy="88" rx="11" ry="26" fill="#8a5630"/><ellipse class="wr" cx="100" cy="88" rx="11" ry="26" fill="#8a5630"/>
+<circle cx="60" cy="52" r="38" fill="#b9794a"/>
+<circle cx="43" cy="50" r="17" fill="#fff"/><circle cx="77" cy="50" r="17" fill="#fff"/>
+<circle cx="45" cy="51" r="8" fill="#2b1b0f"/><circle cx="75" cy="51" r="8" fill="#2b1b0f"/>
+<circle cx="48" cy="48" r="3" fill="#fff"/><circle cx="78" cy="48" r="3" fill="#fff"/>
+<circle class="lid" cx="43" cy="50" r="17.5" fill="#b9794a"/><circle class="lid" cx="77" cy="50" r="17.5" fill="#b9794a"/>
+<path d="M52 62 L68 62 L60 76Z" fill="#f59e0b"/>
+<ellipse cx="46" cy="125" rx="9" ry="4" fill="#f59e0b"/><ellipse cx="74" cy="125" rx="9" ry="4" fill="#f59e0b"/>
+</g></svg>${S.hat ? `<span class="hat">${S.hat}</span>` : ''}</div>`;
+}
+function owlAnim(c) { document.querySelectorAll('.owlbox').forEach(o => { o.classList.remove('cheer', 'sad'); void o.offsetWidth; o.classList.add(c); }); }
+
+// ---------- Gezinme ----------
+let NAV = [], cur = null, modalEl = null, evQ = [];
+function go(name, p) { NAV.push({ name, p }); render(); }
+function replace(name, p) { NAV.pop(); go(name, p); }
+function render() {
+  cur = NAV[NAV.length - 1]; const f = SCR[cur.name]; $('#app').scrollTop = 0;
+  A.mood = (cur.name === 'quiz' || cur.name.startsWith('g_')) ? 'play' : 'menu';
+  f(cur.p);
+}
+window.goBack = function () {
+  if (modalEl) { if (modalEl.dataset.lock) return true; closeModal(); return true; }
+  if (cur && cur.name === 'quiz') { exitQuiz(); return true; }
+  if (NAV.length > 1) { NAV.pop(); render(); return true; }
+  return false;
+};
+function setApp(h) { $('#app').innerHTML = `<div class="wrap">${h}</div>`; }
+
+// ---------- Modal / olaylar ----------
+function showModal(o) {
+  closeModal(true);
+  const m = document.createElement('div'); m.className = 'modal';
+  if (o.lock) m.dataset.lock = '1';
+  m.innerHTML = `<div class="mbox"><div class="${o.cls || 'em'}">${o.e || ''}</div><h2>${o.title || ''}</h2><p>${o.text || ''}</p>${(o.btns || [{ t: 'Tamam', a: 'close' }]).map(b => `<button class="btn ${b.c || ''}" data-act="${b.a}" ${b.d ? `data-d="${b.d}"` : ''}>${b.t}</button>`).join('')}</div>`;
+  document.body.appendChild(m); modalEl = m;
+  if (o.fx) { confetti(o.fx); }
+  if (o.snd) A.s(o.snd);
+  return m;
+}
+function closeModal(silent) { if (modalEl) { modalEl.remove(); modalEl = null; } if (!silent) setTimeout(flushEvents, 120); }
+function flushEvents() {
+  if (modalEl || !evQ.length) return;
+  const e = evQ.shift();
+  if (e.t === 'lvl') {
+    const st = giveSticker();
+    showModal({ e: '🎉', title: `Seviye ${e.lvl}!`, text: `Artık «${TITLES[Math.min(e.lvl - 1, TITLES.length - 1)]}» oldun!` + (st ? `<br>Hediye çıkartma: <span style="font-size:2rem">${st}</span>` : '') + (HATS.find(h => h.lvl === e.lvl) ? `<br>Bilo'nun dolabında yeni bir şey açıldı: ${HATS.find(h => h.lvl === e.lvl).e} ${HATS.find(h => h.lvl === e.lvl).n}!` : ''), fx: 200, snd: 'lvl', btns: [{ t: 'Harika! 🎈', a: 'close', c: 'green' }] });
+  } else if (e.t === 'info') {
+    const st = giveSticker();
+    showModal({ e: '🤓', title: 'Bilgi Ustası!', text: `Şimdiye kadar <b>${e.n}</b> yeni bilgi öğrendin! Bilgi Defteri'nde hepsini tekrar okuyabilirsin.` + (st ? `<br>Hediye çıkartma: <span style="font-size:2rem">${st}</span>` : ''), fx: 120, snd: 'win', btns: [{ t: 'Süper! 📒', a: 'close', c: 'green' }] });
+  } else if (e.t === 'unl') {
+    showModal({ e: e.e, title: 'Yeni Bölüm Açıldı!', text: `<b>${e.name}</b> artık seninle! Hemen keşfetmeye ne dersin?`, fx: 160, snd: 'win', btns: [{ t: 'Haydi gidelim! 🚀', a: 'close', c: 'orange' }] });
+  }
+}
+function addPts(n, el) {
+  const lb = level(); const before = S.pts; S.pts += n; const la = level();
+  for (let l = lb + 1; l <= la; l++) evQ.push({ t: 'lvl', lvl: l });
+  SEC.forEach(s => { if (s.need > 0 && before < s.need && S.pts >= s.need && !S.unl[s.id]) { S.unl[s.id] = 1; evQ.push({ t: 'unl', e: s.e, name: s.name }); } });
+  GAMES.forEach(g => { if (g.need > 100 && before < g.need && S.pts >= g.need && !S.unl[g.id]) { S.unl[g.id] = 1; evQ.push({ t: 'unl', e: g.e, name: g.name + ' oyunu' }); } });
+  save(); if (n > 0) { floatTxt('+' + n + ' ⭐', el); A.s('coin'); }
+}
+function giveSticker() { const miss = STICKERS.filter(x => !S.stick.includes(x)); if (!miss.length) return null; const s = miss[rnd(miss.length)]; S.stick.push(s); save(); return s; }
+
+// ---------- Sandık ----------
+function chestFlow(gold, bonus) {
+  showModal({ e: gold ? '🎁' : '📦', cls: 'chest', title: gold ? 'Altın Sürpriz!' : 'Sürpriz Sandık!', text: 'Dokunarak aç, içinden ne çıkacak?', lock: 1, snd: 'chest', btns: [{ t: 'Aç! ✨', a: 'chestopen', d: gold ? '1' : '0', c: 'orange' }] });
+  A.s('chest');
+}
+function chestOpen(gold) {
+  const miss = STICKERS.filter(x => !S.stick.includes(x)); const r = Math.random(); let out;
+  if (miss.length && (gold || r < .6)) { const s = giveSticker(); out = { e: s, t: 'Yeni çıkartma!', x: 'Albümüne eklendi. Koleksiyonunu tamamlayabilir misin?' }; if (gold) addPts(20); }
+  else if (r < .82) { const f = FACTS[rnd(FACTS.length)]; addPts(5); out = { e: f[0], t: 'Bilgi Kartı!', x: f[1] + '<br><small>(+5 puan)</small>' }; }
+  else { const p = 15 + rnd(16); addPts(p); out = { e: '💎', t: `+${p} Puan!`, x: 'Parlak bir mücevher buldun!' }; }
+  showModal({ e: out.e, title: out.t, text: out.x, fx: 160, snd: 'win', btns: [{ t: 'Süper! 🎉', a: 'close', c: 'green' }] });
+  if (S.set.voice && out.t === 'Bilgi Kartı!') speak(plain(out.x));
+}
+
+// ---------- Ekranlar ----------
+const SCR = {};
+const secBar = need => { const nxt = SEC.filter(s => s.need > S.pts).sort((a, b) => a.need - b.need)[0]; return nxt; };
+
+SCR.intro = function () {
+  setApp(`<div style="text-align:center;padding-top:1rem">${owl('big')}<h1 style="margin:.6rem 0">Bilmece, Deyim, Atasözü Dünyasına Hoş Geldin!</h1><p style="font-size:1.1rem">Ben Bilo, bilge baykuş! Bilmeceler, deyimler, atasözleri, tekerlemeler ve fıkralarla dolu bir maceraya çıkacağız. Adın ne?</p><input class="name" id="nm" maxlength="14" placeholder="Adını yaz" autocomplete="off"><button class="btn green" data-act="intro">Başlayalım! 🚀</button></div>`);
+  setTimeout(() => speak('Bilmece, deyim ve atasözü dünyasına hoş geldin! Ben Bilo, bilge baykuş. Adın ne?'), 500);
+};
+SCR.home = function () {
+  const lv = level(), inLv = S.pts % 100;
+  const nxt = SEC.filter(s => s.need > S.pts).sort((a, b) => a.need - b.need)[0];
+  const daily = S.last !== today();
+  const msgs = ['Bugün hangi macerayı seçiyoruz?', 'Bilmeceleri çözmeye hazır mısın?', 'Beynini çalıştıralım!', 'Yeni bir şey öğrenmeye ne dersin?'];
+  let h = `<div class="top"><div class="chip">⭐ ${S.pts}</div><div class="chip">🏅 Seviye ${lv}</div><div style="flex:1"></div><div class="chip" data-act="mute" style="cursor:pointer">${S.set.music ? '🎵' : '🔇'}</div></div>
+<div class="hero" data-act="owltap">${owl()}<div class="bub">Merhaba <b>${esc(S.name || 'Kaşif')}</b>!<br>${title()}<div class="bar"><i style="width:${inLv}%"></i></div><small>Sonraki seviyeye ${100 - inLv} puan</small></div></div>`;
+  if (daily) h += `<button class="gift" data-act="daily"><span class="em">🎁</span><span><b>Günlük sürprizin hazır!</b><br><small>Açmak için dokun</small></span></button>`;
+  if (nxt) h += `<div style="text-align:center;margin:.6rem 0 0;font-size:.95rem">🔓 <b>${nxt.name}</b> için ${nxt.need - S.pts} puan kaldı!</div>`;
+  h += `<div class="cards">`;
+  SEC.slice().sort((a, b) => a.need - b.need).forEach((s, i) => {
+    const open = S.pts >= s.need, tot = ITEMS[s.id] ? ITEMS[s.id].length : 0;
+    const stars = S.best[s.id] ? '⭐'.repeat(S.best[s.id]) : '';
+    h += `<button class="sec ${open ? '' : 'lock'}" style="background:${s.col};animation-delay:${i * .06}s" data-act="${open ? 'sec' : 'locked'}" data-a="${s.id}"><span class="em">${open ? s.e : '🔒'}</span><span><span class="nm">${s.name}</span><small>${open ? s.desc + (tot ? ` · Öğrenilen ${learned(s.id)}/${tot}` : '') : s.need + ' puan kazanınca açılır'}</small></span><span class="stars">${stars}</span></button>`;
+  });
+  h += `</div><div class="dock"><button data-act="notebook"><span>📒</span>Defter</button><button data-act="album"><span>🏆</span>Albüm</button><button data-act="wardrobe"><span>🎩</span>Dolap</button><button data-act="settings"><span>⚙️</span>Ayarlar</button></div>`;
+  setApp(h);
+  setTimeout(flushEvents, 300);
+};
+SCR.sec = function (id) {
+  const s = secOf(id);
+  let h = `<div class="top"><button class="back" data-act="back">←</button><div class="title">${s.e} ${s.name}</div></div>`;
+  if (id === 'oyn') {
+    h += `<div class="hero">${owl()}<div class="bub">Oyun zamanı! Puan kazandıkça yeni oyunlar açılır.</div></div><div class="cards">`;
+    GAMES.forEach((g, i) => { const open = S.pts >= g.need; h += `<button class="sec ${open ? '' : 'lock'}" style="background:${g.col};animation-delay:${i * .07}s" data-act="${open ? 'game' : 'locked'}" data-a="${g.id}" data-n="${g.need}"><span class="em">${open ? g.e : '🔒'}</span><span><span class="nm">${g.name}</span><small>${open ? g.desc : g.need + ' puanda açılır'}</small></span></button>`; });
+    h += `</div>`;
+  } else if (id === 'haz') {
+    h += `<div class="hero">${owl()}<div class="bub">Büyük final! 10 karışık soru, <b>çifte puan</b>! Hazır mısın?</div></div><button class="btn orange" data-act="quiz" data-a="haz">🎯 Hazineyi Aç!</button>`;
+  } else {
+    const tot = ITEMS[id].length, ln = learned(id);
+    h += `<div class="hero">${owl()}<div class="bub">${s.desc}<div class="bar"><i style="width:${ln / tot * 100}%"></i></div><small>Öğrenilen: ${ln} / ${tot}</small></div></div>
+<button class="btn blue" data-act="learn" data-a="${id}">📚 Öğren</button><button class="btn" style="background:${s.col}" data-act="quiz" data-a="${id}">🎯 Soruları Çöz</button><p style="text-align:center;font-size:.9rem">Önce «Öğren», sonra «Soruları Çöz»! Doğru bildikçe puan ve sürpriz kazanırsın.</p>`;
+  }
+  setApp(h);
+};
+// --- Öğren ---
+SCR.learn = function (p) {
+  const id = p.id, L = p.list, i = p.i, it = L[i], s = secOf(id);
+  if (!S.seen[it.id]) { S.seen[it.id] = 1; addPts(2); }
+  let card = '', say = '';
+  if (id === 'bil') { card = `<div class="em">🧩</div><p>${esc(it.q)}</p>${p.rev ? `<div class="em" style="animation:pop .5s">${it.e}</div><h2>${it.a}</h2>` : `<button class="btn orange" data-act="reveal">🤔 Cevabı göster</button>`}`; say = it.q + (p.rev ? ' Cevap: ' + it.a : ''); }
+  else if (id === 'dey') { card = `<div class="em">${it.e}</div><h2>${it.n}</h2><p>💡 <b>${it.m}</b></p><p class="ex">${it.s.replace(/\{(.*?)\}/, '<b>$1</b>')}</p>`; say = it.n + '. Anlamı: ' + it.m + '. Örnek: ' + it.s.replace(/[{}]/g, ''); }
+  else if (id === 'ata') { card = `<div class="em">${it.e}</div><h2>${it.t}</h2><p>💡 <b>${it.m}</b></p>`; say = it.t + '. Yani: ' + it.m; }
+  else if (id === 'tek') { card = `<div class="em">🎵</div><h2>${it.n}</h2><p style="font-size:1.25rem">${it.t}</p><p>Önce yavaş, sonra hızlı söyle!</p><div class="speeds"><button data-act="say" data-r=".6">🐢</button><button data-act="say" data-r=".95">🐰</button><button data-act="say" data-r="1.35">🚀</button></div>`; say = it.t; }
+  else { card = `<div class="em">🏰</div><h2>${it.n}</h2><p style="text-align:left">${it.x}</p><p class="ex">🌟 Ders: <b>${it.d[0]}</b></p>`; say = it.x + ' Ders: ' + it.d[0]; }
+  if (it.f && (id !== 'bil' || p.rev)) { card += `<p class="ex" style="background:#fff7d6;font-style:normal">🤓 <b>Biliyor muydun?</b><br>${it.f}</p>`; say += ' Biliyor muydun? ' + it.f; learnFact(it.id); }
+  p.say = say;
+  setApp(`<div class="top"><button class="back" data-act="back">←</button><div class="title">${s.e} Öğren ${i + 1}/${L.length}</div><button class="back" data-act="say2">🔊</button></div>
+<div class="lcard">${card}</div>
+<div class="row" style="margin-top:.7rem"><button class="btn alt" data-act="lprev" ${i === 0 ? 'disabled' : ''}>◀ Geri</button>${i < L.length - 1 ? `<button class="btn blue" data-act="lnext">İleri ▶</button>` : `<button class="btn green" data-act="quiz" data-a="${id}">🎯 Sorular!</button>`}</div>`);
+  if (!p.silent) setTimeout(() => speak(say), 250);
+  p.silent = false;
+};
+SCR.album = function () {
+  let h = `<div class="top"><button class="back" data-act="back">←</button><div class="title">🏆 Çıkartma Albümü</div></div><div class="chip" style="display:inline-flex;margin-bottom:.6rem">${S.stick.length} / ${STICKERS.length}</div><div class="grid">`;
+  STICKERS.forEach(s => { const has = S.stick.includes(s); h += `<div class="stk ${has ? '' : 'no'}" ${has ? `data-act="stk" data-a="${s}"` : ''}>${has ? s : '❔'}</div>`; });
+  h += `</div><p style="text-align:center">Soruları çöz, sürpriz sandıklardan çıkartma kazan!</p>`;
+  setApp(h);
+};
+SCR.notebook = function () {
+  const meta = { bil: ['🧩', 'Bilmece', it => it.a, it => it.e], dey: ['🌊', 'Deyim', it => it.n, it => it.e], ata: ['⛰️', 'Atasözü', it => it.t, it => it.e], tek: ['🎵', 'Tekerleme', it => it.n, () => '🎵'], fik: ['🏰', 'Fıkra', it => it.n, () => '🏰'] };
+  let tot = 0, got = 0, body = '';
+  Object.keys(meta).forEach(sec => {
+    const L = ITEMS[sec].filter(x => x.f); tot += L.length; const G2 = L.filter(x => S.facts[x.id]); got += G2.length;
+    if (G2.length) body += `<h3 style="margin:.9rem 0 .3rem">${meta[sec][0]} ${meta[sec][1]} bilgileri</h3>` + G2.map(x => `<div class="fb" style="background:#fff;box-shadow:0 3px 0 rgba(0,0,0,.1)" data-act="nspeak" data-k="${x.id}"><b>${meta[sec][3](x)} ${esc(meta[sec][2](x))}</b><br>${x.f}</div>`).join('');
+  });
+  setApp(`<div class="top"><button class="back" data-act="back">←</button><div class="title">📒 Bilgi Defteri</div></div><div class="chip" style="display:inline-flex">🤓 ${got} / ${tot} bilgi</div><p style="margin:.4rem 0">Soruları çözerken ve öğrenirken keşfettiğin bilgiler burada! Dinlemek için bir bilgiye dokun. Her 10 yeni bilgide hediye kazanırsın.</p>${got ? body : '<div class="fb" style="background:#fff">Henüz bilgi yok. Bir bölüme girip sorulara cevap ver, «Biliyor muydun?» bilgileri buraya eklenecek!</div>'}`);
+};
+SCR.wardrobe = function () {
+  let h = `<div class="top"><button class="back" data-act="back">←</button><div class="title">🎩 Bilo'nun Dolabı</div></div><div style="width:9rem;margin:0 auto">${owl('big')}</div><p style="text-align:center">Seviye atladıkça yeni aksesuarlar açılır!</p><div class="hats">`;
+  HATS.forEach(hd => { const open = level() >= hd.lvl; h += `<button class="hatc ${open ? '' : 'no'} ${S.hat === hd.e ? 'sel' : ''}" ${open ? `data-act="hat" data-a="${hd.e}"` : `data-act="hatlock" data-a="${hd.lvl}"`}><span class="em">${hd.e || '🦉'}</span>${hd.n}<br><small>${open ? '' : '🔒 Seviye ' + hd.lvl}</small></button>`; });
+  setApp(h + '</div>');
+};
+SCR.settings = function () {
+  const T = (k, l) => `<button class="tog" data-act="tog" data-a="${k}">${l}<b class="${S.set[k] ? 'on' : ''}">${S.set[k] ? 'AÇIK' : 'KAPALI'}</b></button>`;
+  let rep = [['bil', 'Bilmece'], ['tek', 'Tekerleme'], ['dey', 'Deyim'], ['ata', 'Atasözü'], ['fik', 'Fıkra']].map(x => `${x[1]}: ${learned(x[0])}/${ITEMS[x[0]].length}`).join(' · ');
+  setApp(`<div class="top"><button class="back" data-act="back">←</button><div class="title">⚙️ Ayarlar</div></div>${T('music', '🎵 Müzik')}${T('sfx', '🔔 Ses efektleri')}${T('voice', '🔊 Sesli okuma')}
+<div style="margin-top:.8rem"><input class="name" id="nm" maxlength="14" value="${esc(S.name)}" placeholder="Adın"><button class="btn green" data-act="savename">Adı kaydet</button></div>
+<div class="fb" style="background:#fff"><b>👨‍👩‍👧 Ebeveyn bilgisi</b><br>Toplam puan: ${S.pts} · Tamamlanan tur: ${S.rounds}<br>Öğrenilenler (en az 2 kez doğru): ${rep}<br>Çıkartma: ${S.stick.length}/${STICKERS.length} · Gün serisi: ${S.streak}</div>
+<button class="btn alt" data-act="reset">🗑️ İlerlemeyi sıfırla</button>`);
+};
+
+// ---------- Soru üretimi ----------
+function opts4(correct, pool, n = 4) {
+  const seen = new Set([lc(correct)]), out = [];
+  shuffle(pool.slice()).forEach(x => { if (out.length < n - 1 && !seen.has(lc(x))) { seen.add(lc(x)); out.push(x); } });
+  return shuffle([{ t: correct, c: 1 }, ...out.map(t => ({ t, c: 0 }))]);
+}
+// Anlamca birbirine yakın olanlar aynı soruda seçenek olarak çıkmasın (iki doğru cevap olmasın)
+const SYN = [
+  ['El ele vermek', 'Elini taşın altına', 'Kolları sıvamak'],
+  ['Gözü pek', 'Gözünü budaktan', 'Yüreği ağzına'],
+  ['Can kulağıyla', 'Kulak vermek', 'Kulak asmamak'],
+  ['Gözden düşmek', 'Pabucu dama'],
+  ['Parmak ısırmak', 'Ağzı kulaklarına'],
+  ['Göz yummak', 'Göz atmak', 'Göz kulak olmak'],
+  ['Ağzı kulaklarına', 'Etekleri zil', 'Ayağı yere'],
+  ['Dört gözle', 'Kulağı kirişte', 'İçi içine', 'Diken üstünde'],
+  ['Sabreden', 'Sabır acıdır'],
+  ['Rüzgâr eken', 'Ne ekersen', 'Ne verirsen', 'Bir fincan'],
+  ['Sakla samanı', 'Ak akçe', 'Ayağını yorganına'],
+  ['Bugünün işini', 'Erken kalkan', 'Kervan yolda']
+];
+const txt = it => it.n || it.t;
+const sameGrp = (a, b) => SYN.some(g => g.some(k => txt(a).startsWith(k)) && g.some(k => txt(b).startsWith(k)));
+const sentence = s => s.replace(/\{(.*?)\}/, '<b>$1</b>');
+function makeQ(sec, it) {
+  const q = { id: it.id, sec, tries: 0, hint: false };
+  if (sec === 'bil') {
+    let pool = ITEMS.bil.filter(x => x.id !== it.id && x.g === it.g).map(x => x.a);
+    if (pool.length < 3) pool = ITEMS.bil.filter(x => x.id !== it.id).map(x => x.a);
+    q.tag = 'Bilmece'; q.prompt = esc(it.q); q.speak = it.q; q.opts = opts4(it.a, pool);
+    q.fb = `${it.e} Cevap: <b>${it.a}</b>`;
+    if (it.fq && Math.random() < .4) {
+      const f = it.fq; q.tag = 'Bilgi Avı'; q.prompt = `${it.e} ${esc(f[0])}`; q.speak = f[0];
+      q.opts = shuffle([{ t: f[1], c: 1 }, { t: f[2], c: 0 }, { t: f[3], c: 0 }]);
+    }
+  } else if (sec === 'dey') {
+    const t = rnd(4), others = ITEMS.dey.filter(x => x.id !== it.id && !sameGrp(x, it));
+    q.tag = 'Deyim';
+    if (t === 3) { q.prompt = `Bu cümlede kalın yazılan deyim ne anlama geliyor?<br><br>${sentence(it.s)}`; q.speak = 'Bu cümlede kalın yazılan deyim ne anlama geliyor? ' + it.s.replace(/[{}]/g, ''); q.opts = opts4(it.m, others.map(x => x.m)); } else
+    if (t === 0) { q.prompt = `«<b>${it.n}</b>» ne demek?`; q.speak = it.n + ' ne demek?'; q.opts = opts4(it.m, others.map(x => x.m)); }
+    else if (t === 1) { q.prompt = `Boşluğa hangi deyim yakışır?<br><br>${it.s.replace(/\{.*?\}/, '<u>&nbsp;&nbsp;_____&nbsp;&nbsp;</u>')}`; q.speak = 'Boşluğa hangi deyim yakışır? ' + it.s.replace(/\{.*?\}/, 'boşluk'); q.opts = opts4(it.n, others.map(x => x.n)); }
+    else { q.prompt = `«<b>${it.m}</b>» anlamına gelen deyim hangisi?`; q.speak = it.m + ' anlamına gelen deyim hangisi?'; q.opts = opts4(it.n, others.map(x => x.n)); }
+    q.fb = `${it.e} <b>${it.n}</b> = ${it.m}<br><i>${sentence(it.s)}</i>`;
+  } else if (sec === 'ata') {
+    const t = rnd(3), others = ITEMS.ata.filter(x => x.id !== it.id && !sameGrp(x, it));
+    q.tag = 'Atasözü';
+    if (t === 0) {
+      // büyük/küçük harf ipucu vermesin: hepsini doğru kelimenin biçimine getir
+      const cap = it.gap[0] === uc(it.gap[0]), fm = w => cap ? uc(w[0]) + lc(w.slice(1)) : lc(w);
+      q.prompt = `Eksik kelimeyi bul:<br><br>${esc(it.raw.replace(/\{.*?\}/, '_____'))}`; q.speak = 'Eksik kelimeyi bul. ' + it.raw.replace(/\{.*?\}/, 'boşluk');
+      q.opts = opts4(it.gap, others.map(x => fm(x.gap)));
+    }
+    else if (t === 1) { q.prompt = `«<b>${esc(it.t)}</b>» ne anlatıyor?`; q.speak = it.t + ' ne anlatıyor?'; q.opts = opts4(it.m, others.map(x => x.m)); }
+    else { q.prompt = `«<b>${it.m}</b>»<br>Bu anlama gelen atasözü hangisi?`; q.speak = it.m + ' Bu anlama gelen atasözü hangisi?'; q.opts = opts4(it.t, others.map(x => x.t)); }
+    q.fb = `${it.e} <b>${esc(it.t)}</b><br>${it.m}`;
+  } else if (sec === 'tek') {
+    const clean = w => w.replace(/[.,?!]/g, '');
+    const words = it.t.split(/\s+/).map(clean);
+    const rr = Math.random(), t = it.h ? (rr < .3 ? 1 : rr < .65 ? 2 : 0) : 0; q.tag = 'Tekerleme';
+    const cnt = it.h ? it.t.split(/\s+/).filter(w => lc(w)[0] === it.h).length : 0;
+    if (t === 2 && cnt >= 3) {
+      const cs = [...new Set([cnt, cnt - 1, cnt + 1, cnt + 2])].filter(x => x > 0);
+      q.prompt = `<i>${esc(it.t)}</i><br><br>Bu tekerlemede kaç sözcük «${uc(it.h)}» harfiyle başlıyor? Dikkatle say!`; q.speak = 'Bu tekerlemede kaç sözcük ' + it.h + ' harfiyle başlıyor?';
+      q.opts = shuffle(cs.map(x => ({ t: String(x), c: x === cnt ? 1 : 0 })));
+    } else if (t === 1) {
+      const lets = shuffle('bkmtsdlpzrnygçşh'.split('').filter(x => x !== it.h)).slice(0, 3);
+      q.prompt = `<i>${esc(it.t)}</i><br><br>Bu tekerlemede en çok hangi harf tekrar ediyor?`; q.speak = it.t + ' Bu tekerlemede en çok hangi harf tekrar ediyor?';
+      q.opts = shuffle([{ t: uc(it.h) + ' harfi', c: 1 }, ...lets.map(l => ({ t: uc(l) + ' harfi', c: 0 }))]);
+    } else {
+      const cand = words.map((w, i) => i).filter(i => i > 0 && clean(words[i]).length >= 4);
+      const gi = cand[rnd(cand.length)], gw = lc(words[gi]);
+      const shown = it.t.split(/\s+/).map((w, i) => i === gi ? w.replace(clean(w), '_____') : w).join(' ');
+      const pool = []; ITEMS.tek.filter(x => x.id !== it.id).forEach(x => x.t.split(/\s+/).forEach(w => { w = lc(clean(w)); if (w.length >= 4 && Math.abs(w.length - gw.length) <= 3) pool.push(w); }));
+      if (new Set(pool).size < 4) ITEMS.tek.filter(x => x.id !== it.id).forEach(x => x.t.split(/\s+/).forEach(w => { w = lc(clean(w)); if (w.length >= 4) pool.push(w); }));
+      q.prompt = `Eksik kelimeyi bul:<br><br><i>${esc(shown)}</i>`; q.speak = 'Eksik kelimeyi bul. ' + shown.replace('_____', 'boşluk'); q.opts = opts4(gw, pool);
+    }
+    q.fb = `🎵 <b>${it.n}</b><br>${esc(it.t)}<br><small>Şimdi sen de hızlıca söylemeyi dene!</small>`; q.say = it.t;
+  } else {
+    const t = rnd(2); q.tag = 'Fıkra';
+    const body = `<b>${it.n}</b><br><span style="font-size:1.02rem;font-weight:600">${it.x}</span><hr style="border:0;border-top:2px dashed #ddd">`;
+    if (t === 0) { q.prompt = body + it.q; q.opts = shuffle(it.o.map((x, i) => ({ t: x, c: i === 0 ? 1 : 0 }))); q.speak = it.x + ' ' + it.q; }
+    else { q.prompt = body + 'Bu fıkradan ne öğreniyoruz?'; q.opts = shuffle(it.d.map((x, i) => ({ t: x, c: i === 0 ? 1 : 0 }))); q.speak = it.x + ' Bu fıkradan ne öğreniyoruz?'; }
+    q.fb = `🌟 <b>Ders:</b> ${it.d[0]}`;
+  }
+  q.fact = it.f; q.hard = it.hard;
+  return q;
+}
+function pickItems(sec, n) {
+  const L = ITEMS[sec].slice(); L.forEach(x => x._r = (S.mast[x.id] || 0) + Math.random() * 2.2 + (x.hard ? (S.pts < 100 ? 1 : 0) : (S.pts > 300 ? .6 : 0)));
+  return L.sort((a, b) => a._r - b._r).slice(0, n);
+}
+// ---------- Quiz ----------
+let QZ = null;
+SCR.quiz = function (sec) {
+  if (!QZ || QZ.sec !== sec) {
+    let qs;
+    if (sec === 'haz') { qs = []; ['bil', 'tek', 'dey', 'ata', 'fik'].forEach(s => pickItems(s, 2).forEach(it => qs.push(makeQ(s, it)))); shuffle(qs); }
+    else qs = pickItems(sec, 5).map(it => makeQ(sec, it));
+    QZ = { sec, qs, n: qs.length, i: 0, ft: 0, gain: 0, combo: 0, res: [] };
+  }
+  quizShow();
+};
+function quizShow() {
+  const Q = QZ, q = Q.qs[Q.i], s = secOf(Q.sec === 'haz' ? 'haz' : Q.sec);
+  const tagCol = secOf(q.sec).col;
+  let dots = ''; for (let k = 0; k < Q.qs.length; k++) dots += `<i class="${k < Q.i ? (Q.res[k] ? 'on' : 'bad') : k === Q.i ? 'cur' : ''}"></i>`;
+  setApp(`<div class="top"><button class="back" data-act="exitq">✕</button><div class="dots">${dots}</div><div class="chip" id="qgain">⭐ ${Q.gain}</div></div>
+<div style="display:flex;align-items:flex-end;gap:.5rem">${owl('sm')}<div class="chip" style="font-size:.9rem">${Q.combo >= 3 ? '🔥 Seri x' + Q.combo : 'Bilo seninle!'}</div></div>
+<div class="qcard"><span class="tag" style="background:${tagCol}">${q.tag}${q.rep ? ' · tekrar' : ''}</span><button class="speak" data-act="qspeak">🔊</button><div>${q.prompt}</div></div>
+<div id="opts">${q.opts.map((o, i) => `<button class="opt" style="animation-delay:${i * .07}s" data-act="pick" data-i="${i}">${esc(o.t)}</button>`).join('')}</div>
+<div id="fbArea"><div style="text-align:center"><button class="hintbtn" data-act="hint">💡 İpucu (2 yanlışı ele)</button></div></div>`);
+  if (!q.shown) { q.shown = 1; setTimeout(() => speak(q.speak), 350); }
+}
+function qPick(i, el) {
+  const Q = QZ, q = Q.qs[Q.i]; if (q.done) return; const o = q.opts[i];
+  const btns = document.querySelectorAll('#opts .opt');
+  if (o.c) {
+    q.done = true; const first = q.tries === 0 && !q.hint;
+    let base = (S.mast[q.id] || 0) >= 3 ? 5 : 10; if (q.hard) base += 2; if (Q.sec === 'haz') base *= 2;
+    if (!first) base = Math.ceil(base / 2);
+    if (first) { Q.combo++; if (!q.rep) Q.ft++; if (Q.combo >= 3) base += Math.min(Q.combo - 2, 3) * 2; S.mast[q.id] = Math.min(5, (S.mast[q.id] || 0) + 1); } else Q.combo = 0;
+    Q.res[Q.i] = first; Q.gain += base; $('#qgain').textContent = '⭐ ' + Q.gain; addPts(base, el); A.s('ok'); confetti(first ? 40 : 15);
+    btns[i].classList.add('ok'); btns.forEach(b => { if (b !== btns[i]) b.classList.add('off'); }); owlAnim('cheer');
+    if (!first && !q.rep) { Q.qs.push(Object.assign({}, makeQ(q.sec, ITEMS[q.sec].find(x => x.id === q.id)), { rep: true })); }
+    quizDone(true, q);
+  } else {
+    q.tries++; Q.combo = 0; btns[i].classList.add('no'); btns[i].style.pointerEvents = 'none'; A.s('no'); owlAnim('sad');
+    if (q.tries >= 2 || q.opts.length - q.tries <= 1) {
+      q.done = true; Q.res[Q.i] = false; S.mast[q.id] = Math.max(0, (S.mast[q.id] || 0) - 1); save();
+      q.opts.forEach((x, k) => { if (x.c) btns[k].classList.add('ok'); else btns[k].classList.add('off'); });
+      if (!q.rep) Q.qs.push(Object.assign({}, makeQ(q.sec, ITEMS[q.sec].find(x => x.id === q.id)), { rep: true }));
+      quizDone(false, q);
+    } else { $('#fbArea').innerHTML = `<div class="fb no">Olmadı, bir daha dene! 💪 Sen yaparsın.</div>`; speak('Bir daha dene!'); }
+  }
+}
+function quizDone(ok, q) {
+  const last = QZ.i >= QZ.qs.length - 1;
+  $('#fbArea').innerHTML = `<div class="fb ${ok ? 'ok' : 'no'}"><b>${ok ? ['Harika! 🎉', 'Bravo! 👏', 'Süper! ⭐', 'Muhteşem! 🌟'][rnd(4)] : 'Doğrusu şuydu:'}</b><br>${q.fb}</div>${factBox(q.fact)}${q.say ? `<button class="btn alt" data-act="qsay">🔊 Tekerlemeyi dinle</button>` : ''}<button class="btn green" data-act="qnext">${last ? 'Bitir 🏁' : 'Devam ▶'}</button>`;
+  if (q.fact) learnFact(q.id);
+  speak(plain(q.fb) + (q.fact ? '. Biliyor muydun? ' + plain(q.fact) : ''));
+  setTimeout(() => { const b = $('[data-act=qnext]'); if (b) b.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 150);
+}
+function qHint() {
+  const q = QZ.qs[QZ.i]; if (q.done || q.hint) return; q.hint = true;
+  const btns = document.querySelectorAll('#opts .opt'); let rm = 0;
+  shuffle(q.opts.map((o, i) => i)).forEach(i => { if (!q.opts[i].c && rm < 2 && !btns[i].classList.contains('no')) { btns[i].classList.add('off'); rm++; } });
+  $('#fbArea').innerHTML = '';
+  A.s('click');
+}
+function exitQuiz() { showModal({ e: '🤔', title: 'Çıkmak istiyor musun?', text: 'Bu turdaki ilerlemen kaybolacak.', btns: [{ t: 'Devam et 💪', a: 'close', c: 'green' }, { t: 'Çık', a: 'quitq', c: 'alt' }] }); }
+function endQuiz() {
+  const Q = QZ; const r = Q.ft / Q.n; const stars = r >= .99 ? 3 : r >= .6 ? 2 : 1;
+  S.rounds++; S.best[Q.sec] = Math.max(S.best[Q.sec] || 0, stars); const bonus = stars * (Q.sec === 'haz' ? 10 : 5); addPts(bonus);
+  const o = { title: Q.sec === 'haz' ? 'Hazine Turu Bitti!' : 'Tur Bitti!', ft: Q.ft, n: Q.n, gain: Q.gain + bonus, bonus, stars, again: Q.sec, back: Q.sec, gold: stars === 3 };
+  QZ = null; replace('result', o);
+}
+SCR.result = function (o) {
+  const msg = o.stars === 3 ? 'Mükemmel! Sen bir dahisin!' : o.stars === 2 ? 'Çok iyi gittin!' : 'Güzel deneme! Tekrar edince daha da iyi olacak.';
+  let st = ''; for (let i = 0; i < 3; i++) st += `<span style="animation-delay:${i * .35}s;${i < o.stars ? '' : 'filter:grayscale(1);opacity:.3'}">⭐</span>`;
+  setApp(`<div style="text-align:center;padding-top:1rem"><h1 style="margin:0">${o.title}</h1><div class="stars3">${st}</div>${owl('big')}<p style="font-size:1.2rem">${msg}</p>
+<div class="chip" style="display:inline-flex;font-size:1.2rem">${o.ft != null ? `✅ ${o.ft}/${o.n} ilk seferde · ` : ''}⭐ +${o.gain} puan</div>
+${o.stars >= 2 ? `<button class="gift" data-act="chest" data-g="${o.gold ? 1 : 0}"><span class="em">${o.gold ? '🎁' : '📦'}</span><span><b>Sürpriz sandığın hazır!</b><br><small>Açmak için dokun</small></span></button>` : ''}
+<button class="btn green" data-act="${GAMES.some(g => g.id === o.again) ? 'game' : 'quiz'}" data-a="${o.again}">🔄 Tekrar oyna</button><button class="btn alt" data-act="back">🏠 Geri dön</button></div>`);
+  A.s('win'); confetti(o.stars * 60); speak(msg);
+  setTimeout(flushEvents, 1400);
+};
+
+// ---------- Oyunlar ----------
+let G = null;
+function gameStart(id) { G = null; NAV.push({ name: 'g_' + id }); render(); }
+function gameEnd(title, gain, stars, again, extra) { addPts(gain); S.rounds++; replace('result', { title, gain: gain + (extra || 0), stars, again, back: 'oyn', gold: stars === 3 }); }
+// Hafıza
+SCR.g_mem = function () {
+  if (!G) { const pool = shuffle(ITEMS.bil.slice()).slice(0, 6); const cards = []; pool.forEach((it, i) => { cards.push({ p: i, t: 'e', f: it.e }); cards.push({ p: i, t: 'w', f: it.a }); }); G = { cards: shuffle(cards), first: null, lock: false, moves: 0, matched: 0 }; }
+  setApp(`<div class="top"><button class="back" data-act="back">←</button><div class="title">🃏 Hafıza Kartları</div><div class="chip" id="mv">Hamle ${G.moves}</div></div><p style="text-align:center;margin:.2rem">Resmi ve kelimesini eşleştir!</p><div class="mem">${G.cards.map((c, i) => `<button class="mc" data-act="mflip" data-i="${i}"><div class="in"><div class="ba">❓</div><div class="fa ${c.t === 'w' ? 'w' : ''}">${c.f}</div></div></button>`).join('')}</div>`);
+};
+function mFlip(i) {
+  if (G.lock) return; const els = document.querySelectorAll('.mc'), el = els[i]; if (el.classList.contains('f') || el.classList.contains('m')) return;
+  el.classList.add('f'); A.s('flip');
+  if (G.cards[i].t === 'w') speak(G.cards[i].f);
+  if (G.first === null) { G.first = i; return; }
+  const a = G.first, b = i; G.first = null; G.moves++; $('#mv').textContent = 'Hamle ' + G.moves;
+  if (G.cards[a].p === G.cards[b].p) {
+    els[a].classList.add('m'); els[b].classList.add('m'); G.matched++; setTimeout(() => A.s('ok'), 300);
+    if (G.matched === 6) { const g = Math.max(15, 55 - (G.moves - 6) * 4); const st = G.moves <= 9 ? 3 : G.moves <= 13 ? 2 : 1; setTimeout(() => { gameEnd('Hafıza Tamam!', g, st, 'mem'); }, 900); }
+  } else { G.lock = true; setTimeout(() => { els[a].classList.remove('f'); els[b].classList.remove('f'); G.lock = false; }, 900); }
+}
+// Balon
+const BCOL = ['#ef4444', '#3b82f6', '#22c55e', '#a855f7', '#f59e0b', '#ec4899'];
+SCR.g_bal = function () {
+  if (!G) G = { r: 0, items: shuffle(ITEMS.bil.slice()).slice(0, 5), wrong: 0, gain: 0, perf: 0 };
+  const it = G.items[G.r];
+  let pool = ITEMS.bil.filter(x => x.id !== it.id && x.g === it.g).map(x => x.a); if (pool.length < 3) pool = ITEMS.bil.filter(x => x.id !== it.id).map(x => x.a);
+  G.opts = opts4(it.a, pool); G.wrong = 0;
+  const pos = [[6, 4], [54, 14], [8, 52], [54, 58]]; const cs = shuffle(BCOL.slice());
+  setApp(`<div class="top"><button class="back" data-act="back">←</button><div class="title">🎈 Balon Patlat ${G.r + 1}/5</div><div class="chip">⭐ ${G.gain}</div></div>
+<div class="qcard"><button class="speak" data-act="gspeak">🔊</button>${esc(it.q)}</div>
+<div class="balls">${G.opts.map((o, i) => `<button class="ball" style="left:${pos[i][0]}%;top:${pos[i][1]}%;background:${cs[i]};animation-delay:${i * .5}s" data-act="bpick" data-i="${i}">${o.t}</button>`).join('')}</div>`);
+  setTimeout(() => speak(it.q), 300);
+};
+function bPick(i, el) {
+  const o = G.opts[i];
+  if (o.c) {
+    el.classList.add('gone'); A.s('pop'); confetti(50); const g = G.wrong === 0 ? 10 : 5; G.gain += g; if (G.wrong === 0) G.perf++; addPts(g, el); owlAnim('cheer'); speak(G.items[G.r].e + ' ' + o.t);
+    G.r++; setTimeout(() => { if (G.r >= 5) { const st = G.perf >= 5 ? 3 : G.perf >= 3 ? 2 : 1; gameEnd('Balonlar Patladı!', 10 + st * 5, st, 'bal', G.gain); } else render(); }, 1000);
+    document.querySelectorAll('.ball').forEach(b => { if (b !== el) b.classList.add('gone'); });
+  } else { G.wrong++; el.classList.add('bad'); A.s('no'); }
+}
+// Deyim eşleştir
+SCR.g_mat = function () {
+  if (!G) G = { r: 0, mist: 0, perfect: 0 };
+  G.pairs = shuffle(ITEMS.dey.slice()).slice(0, 4); G.R = shuffle(G.pairs.slice()); G.selL = null; G.done = 0;
+  setApp(`<div class="top"><button class="back" data-act="back">←</button><div class="title">🔗 Deyim Eşleştir ${G.r + 1}/2</div></div><p style="text-align:center;margin:.2rem">Deyimi, anlamıyla eşleştir!</p>
+<div class="cols"><div>${G.pairs.map(p => `<button class="mt" data-act="mt" data-s="L" data-k="${p.id}">${p.n}</button>`).join('')}</div><div>${G.R.map(p => `<button class="mt" data-act="mt" data-s="R" data-k="${p.id}">${p.m}</button>`).join('')}</div></div>`);
+};
+function mtPick(el) {
+  const s = el.dataset.s, k = el.dataset.k;
+  if (s === 'L') { document.querySelectorAll('.mt[data-s=L]').forEach(b => b.classList.remove('sel')); el.classList.add('sel'); G.selL = k; speak(DEYIM.find((d, i) => 'd' + i === k)[0]); A.s('click'); return; }
+  if (!G.selL) { A.s('click'); return; }
+  if (G.selL === k) {
+    document.querySelectorAll(`.mt[data-k=${k}]`).forEach(b => { b.classList.remove('sel'); b.classList.add('done'); }); G.selL = null; G.done++; A.s('ok'); addPts(5, el);
+    if (G.done === 4) { G.r++; if (G.r >= 2) { const st = G.mist <= 1 ? 3 : G.mist <= 4 ? 2 : 1; const g = Math.max(10, 20 - G.mist * 2) + st * 5; setTimeout(() => gameEnd('Eşleştirme Tamam!', g, st, 'mat', 40), 700); } else setTimeout(render, 800); }
+  } else { G.mist++; el.classList.add('no'); A.s('no'); setTimeout(() => el.classList.remove('no'), 500); }
+}
+// Atasözü sırala
+SCR.g_srt = function () {
+  if (!G) G = { r: 0, items: shuffle(ITEMS.ata.filter(x => x.t.split(' ').length <= 7)).slice(0, 3), fails: 0 };
+  const it = G.items[G.r], w = it.t.split(' '); G.w = w; G.order = shuffle(w.map((x, i) => i)); G.placed = w.map(() => null); G.lock = w.map(() => false);
+  drawSrt();
+};
+function drawSrt(msg) {
+  const it = G.items[G.r], w = G.w;
+  setApp(`<div class="top"><button class="back" data-act="back">←</button><div class="title">🧱 Atasözü Sırala ${G.r + 1}/3</div></div><p style="text-align:center;margin:.2rem">${it.e} Kelimeleri doğru sıraya diz!</p>
+<div class="slots">${G.placed.map((p, i) => `<button class="slot ${p === null ? '' : 'fill'} ${G.lock[i] ? 'ok' : ''} ${G.bad && G.bad[i] ? 'bad' : ''}" data-act="sslot" data-i="${i}">${p === null ? '&nbsp;&nbsp;' : G.order.length ? w[G.order[p]] : ''}</button>`).join('')}</div>
+<div class="chips">${G.order.map((wi, k) => `<button class="chip2 ${G.placed.includes(k) ? 'used' : ''}" data-act="schip" data-i="${k}">${w[wi]}</button>`).join('')}</div>${msg || ''}`);
+}
+function sChip(k) {
+  const i = G.placed.indexOf(null); if (i < 0) return; G.placed[i] = k; A.s('click'); G.bad = null; drawSrt();
+  if (G.placed.indexOf(null) < 0) {
+    const bad = G.placed.map((p, j) => G.w[G.order[p]] !== G.w[j]);
+    if (!bad.some(x => x)) { G.lock = G.lock.map(() => true); const it = G.items[G.r]; const g = Math.max(5, 15 - G.fails * 3); G.fails = 0; G.gain = (G.gain || 0) + g; A.s('ok'); confetti(60); addPts(g); speak(it.t + '. ' + it.m); drawSrt(`<div class="fb ok"><b>Doğru! 🎉</b><br>${it.m}</div><button class="btn green" data-act="snext">${G.r >= 2 ? 'Bitir 🏁' : 'Devam ▶'}</button>`); }
+    else { G.fails++; G.totalFails = (G.totalFails || 0) + 1; G.bad = bad; A.s('no'); drawSrt(); setTimeout(() => { G.placed = G.placed.map((p, j) => bad[j] ? null : p); G.lock = G.placed.map((p, j) => p !== null); G.bad = null; drawSrt(); }, 800); }
+  }
+}
+function sSlot(i) { if (G.lock[i] || G.placed[i] === null || G.bad) return; G.placed[i] = null; A.s('click'); drawSrt(); }
+
+// ---------- Tıklama yönetimi ----------
+const ACT = {
+  close() { closeModal(); },
+  back() { window.goBack(); },
+  intro() { const v = ($('#nm').value || '').trim(); S.name = v || 'Kaşif'; save(); replace('home'); speak('Merhaba ' + S.name + '! Hadi başlayalım!'); },
+  mute() { S.set.music = !S.set.music; save(); render(); },
+  owltap() { owlAnim('cheer'); const t = ['Bugün de çok şey öğreneceğiz!', 'Ben Bilo! Sen de çok akıllısın!', 'Hu hu! Bilmece sorayım mı?', 'Beraber öğrenmek çok eğlenceli!']; speak(t[rnd(t.length)], 'force'); },
+  daily() {
+    const y = S.last === yesterday(); S.streak = y ? S.streak + 1 : 1; S.last = today(); const p = 10 * Math.min(S.streak, 5); addPts(p); save();
+    showModal({ e: '🎁', cls: 'chest', title: 'Günlük Sürpriz!', text: `🔥 Üst üste <b>${S.streak}</b>. gün! Ödül: +${p} puan`, lock: 1, snd: 'chest', btns: [{ t: 'Aç! ✨', a: 'chestopen', d: '1', c: 'orange' }] });
+    render();
+  },
+  locked(el) { const n = +(el.dataset.n || secOf(el.dataset.a).need); A.s('no'); showModal({ e: '🔒', title: 'Henüz kilitli!', text: `Bu bölüm için <b>${n - S.pts}</b> puan daha kazanmalısın. Soru çözerek hemen kazanabilirsin!`, btns: [{ t: 'Tamam 👍', a: 'close', c: 'green' }] }); },
+  sec(el) { A.s('click'); go('sec', el.dataset.a); },
+  quiz(el) { const id = el.dataset.a; QZ = null; if (cur.name === 'learn') NAV.pop(); if (cur.name === 'result') NAV.pop(); go('quiz', id); },
+  learn(el) { const id = el.dataset.a; go('learn', { id, list: pickItems(id, 10), i: 0 }); },
+  lnext() { cur.p.i++; cur.p.rev = false; render(); },
+  lprev() { cur.p.i--; cur.p.rev = false; render(); },
+  reveal() { cur.p.rev = true; A.s('ok'); render(); },
+  say(el) { forceSpeak(cur.p.list[cur.p.i].t, +el.dataset.r); },
+  say2() { forceSpeak(cur.p.say, .9); },
+  pick(el) { qPick(+el.dataset.i, el); },
+  hint: qHint,
+  qspeak() { forceSpeak(QZ.qs[QZ.i].speak, .9); },
+  qsay() { forceSpeak(QZ.qs[QZ.i].say, .8); },
+  qnext() { QZ.i++; if (QZ.i >= QZ.qs.length) endQuiz(); else quizShow(); },
+  exitq: exitQuiz,
+  quitq() { closeModal(true); QZ = null; NAV.pop(); render(); },
+  chest(el) { chestFlow(el.dataset.g === '1'); el.remove(); },
+  chestopen(el) { closeModal(true); chestOpen(el.dataset.d === '1'); },
+  notebook() { go('notebook'); },
+  nspeak(el) { const k = el.dataset.k; const it = Object.values(ITEMS).flat().find(x => x.id === k); if (it) forceSpeak(it.f, .9); },
+  album() { go('album'); }, wardrobe() { go('wardrobe'); }, settings() { go('settings'); },
+  stk(el) { A.s('pop'); el.classList.add('new'); speak('Harika bir çıkartma!'); setTimeout(() => el.classList.remove('new'), 1200); },
+  hat(el) { S.hat = el.dataset.a; save(); A.s('ok'); render(); },
+  hatlock(el) { A.s('no'); showModal({ e: '🔒', title: 'Kilitli', text: `Bu aksesuar <b>Seviye ${el.dataset.a}</b>'de açılır!`, btns: [{ t: 'Tamam', a: 'close', c: 'green' }] }); },
+  tog(el) { const k = el.dataset.a; S.set[k] = !S.set[k]; save(); render(); },
+  savename() { S.name = ($('#nm').value || '').trim() || 'Kaşif'; save(); A.s('ok'); showModal({ e: '✅', title: 'Kaydedildi!', text: 'Merhaba ' + esc(S.name) + '!' }); },
+  reset() { showModal({ e: '⚠️', title: 'Emin misin?', text: 'Tüm puanlar, çıkartmalar ve ilerleme silinecek!', btns: [{ t: 'Vazgeç', a: 'close', c: 'green' }, { t: 'Evet, sıfırla', a: 'reset2', c: 'alt' }] }); },
+  reset2() { closeModal(true); S = defState(); save(); NAV = []; go('intro'); },
+  game(el) { if (cur.name === 'result') NAV.pop(); gameStart(el.dataset.a); },
+  mflip(el) { mFlip(+el.dataset.i); },
+  gspeak() { forceSpeak(G.items[G.r].q, .9); },
+  bpick(el) { bPick(+el.dataset.i, el); },
+  mt(el) { mtPick(el); },
+  schip(el) { sChip(+el.dataset.i); },
+  sslot(el) { sSlot(+el.dataset.i); },
+  snext() { G.r++; if (G.r >= 3) { const st = (G.totalFails || 0) === 0 ? 3 : G.totalFails <= 3 ? 2 : 1; gameEnd('Atasözleri Tamam!', 10 + st * 5, st, 'srt', G.gain); } else render(); }
+};
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-act]'); if (!a) return;
+  if (ACT[a.dataset.act]) { if (!['pick', 'bpick', 'mflip', 'schip', 'sslot', 'mt'].includes(a.dataset.act)) A.s('click'); ACT[a.dataset.act](a); }
+});
+
+// ---------- Başlat ----------
+(function init() {
+  const sky = $('#sky');
+  for (let i = 0; i < 5; i++) { const c = document.createElement('div'); c.className = 'cloud'; c.textContent = '☁️'; c.style.top = (4 + i * 11) + 'vh'; c.style.animationDuration = (50 + i * 15) + 's'; c.style.animationDelay = (-i * 17) + 's'; c.style.fontSize = (2.4 + (i % 3)) + 'rem'; sky.appendChild(c); }
+  sky.insertAdjacentHTML('beforeend', '<div class="hill"></div><div class="hill h2"></div>');
+  if (!S.name) NAV.push({ name: 'intro' }); else NAV.push({ name: 'home' });
+  render();
+})();
+</script>
+</body></html>
