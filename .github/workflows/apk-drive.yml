@@ -1,0 +1,116 @@
+# Yeni sürüm → imzalı APK → GitHub Release + Google Drive (APK Arşivi/Bilmece Deyim Atasözü/)
+# Drive'da yeni sürüm yüklendikten sonra aynı klasördeki eski sürüm(ler) çöp kutusuna taşınır.
+# Yeni sürüm = sürüm numarası değişti (v<sürüm> etiketi henüz yok) veya o sürüm Drive'da yok.
+# Sürüm numarası: AndroidManifest.xml → versionName (versionCode'u da artırın)
+# Drive için tek gizli değişken: GDRIVE_OAUTH  (ayrıntı: .github/scripts/drive_yukle.py)
+name: APK → Drive
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      zorla:
+        description: Sürüm değişmemiş olsa da yeniden derle ve yükle
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apk-drive
+  cancel-in-progress: false
+
+env:
+  UYGULAMA: "Bilmece Deyim Atasözü"
+  DOSYA_ONEKI: BilmeceDeyimAtasozu
+
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    outputs:
+      gerekli: ${{ steps.k.outputs.gerekli }}
+      surum: ${{ steps.k.outputs.surum }}
+      apk: ${{ steps.k.outputs.apk }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Yeni sürüm var mı?
+        id: k
+        env:
+          GDRIVE_OAUTH: ${{ secrets.GDRIVE_OAUTH }}
+          ZORLA: ${{ inputs.zorla }}
+        run: |
+          set -euo pipefail
+          SURUM=$(grep -o 'android:versionName="[^"]*"' android/AndroidManifest.xml | head -1 | cut -d'"' -f2)
+          test -n "$SURUM" || { echo "::error::Sürüm numarası okunamadı"; exit 1; }
+          APK="${DOSYA_ONEKI}-v${SURUM}.apk"
+          if [ "${ZORLA:-false}" = "true" ]; then neden="elle istendi"
+          elif ! git ls-remote --exit-code --tags origin "refs/tags/v${SURUM}" >/dev/null; then neden="yeni sürüm"
+          elif [ "$(python3 .github/scripts/drive_yukle.py var "$UYGULAMA" "$APK")" = "yok" ]; then neden="Drive'da yok"
+          else neden=""; fi
+          echo "surum=$SURUM" >> "$GITHUB_OUTPUT"
+          echo "apk=$APK" >> "$GITHUB_OUTPUT"
+          if [ -n "$neden" ]; then
+            echo "gerekli=true" >> "$GITHUB_OUTPUT"
+            echo "### $APK derlenecek ($neden)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "gerekli=false" >> "$GITHUB_OUTPUT"
+            echo "### v$SURUM zaten yayında ve Drive'da; derleme atlandı" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+  derle:
+    needs: kontrol
+    if: needs.kontrol.outputs.gerekli == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SURUM: ${{ needs.kontrol.outputs.surum }}
+      APK: ${{ needs.kontrol.outputs.apk }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Android build-tools 35 / platform 35
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;35.0.0" "platforms;android-35" >/dev/null
+
+      - name: APK derle ve imzala
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$KEYSTORE_BASE64" || { echo "::error::KEYSTORE_BASE64 gizli değişkeni tanımlı değil"; exit 1; }
+          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/zeka-release.jks"
+          KEYSTORE_FILE="$RUNNER_TEMP/zeka-release.jks" bash build.sh
+          mkdir -p dist && cp BilmeceDeyimAtasozu.apk "dist/$APK"
+          rm -f "$RUNNER_TEMP/zeka-release.jks"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.APK }}
+          path: dist/${{ env.APK }}
+          retention-days: 30
+
+      - name: GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v$SURUM" >/dev/null 2>&1; then
+            gh release upload "v$SURUM" "dist/$APK" --clobber
+          else
+            gh release create "v$SURUM" "dist/$APK" --target "$GITHUB_SHA" \
+              --title "$UYGULAMA v$SURUM" --notes "Otomatik derleme: $GITHUB_SHA"
+          fi
+
+      - name: Google Drive'a yükle, eski sürümü kaldır
+        env:
+          GDRIVE_OAUTH: ${{ secrets.GDRIVE_OAUTH }}
+        run: python3 .github/scripts/drive_yukle.py yukle "$UYGULAMA" "dist/$APK" | tee -a "$GITHUB_STEP_SUMMARY"
