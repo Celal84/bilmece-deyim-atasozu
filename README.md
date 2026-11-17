@@ -14,6 +14,6 @@
 PC gerekmez: `main` dalına gönderilen her değişiklikte `.github/workflows/apk-drive.yml` çalışır.
 
 - **Yeni sürüm çıkarmak için** `android/AndroidManifest.xml` içindeki `versionName` ve `versionCode` değerleri (ikisini birlikte artırın) güncellenip `main`e gönderilir.
-- Sürüm yeniyse imzalı APK derlenir, `v<sürüm>` adıyla GitHub Release açılır ve APK Google Drive'da **APK Arşivi** klasöründeki uygulama klasörüne yüklenir; aynı klasördeki eski sürüm çöp kutusuna taşınır.
+- Sürüm yeniyse imzalı APK derlenir, `v<sürüm>` adıyla GitHub Release açılır ve APK tek dosya olarak `apk` dalına konur.
+- Claude'un zamanlanmış görevi `apk` dalındaki APK'yı Google Drive'daki **Claude Apk** klasörüne yükler ve aynı uygulamanın eski sürümünü çöp kutusuna taşır.
 - Sürüm değişmediyse derleme atlanır. Elle yeniden derlemek için: Actions → *APK → Drive* → *Run workflow* (`zorla`).
-- Drive bağlantısı için depoda tek gizli değişken gerekir: `GDRIVE_OAUTH` (`.github/scripts/drive_yukle.py` başındaki açıklamaya bakın).

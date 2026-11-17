@@ -1,8 +1,8 @@
-# Yeni sürüm → imzalı APK → GitHub Release + Google Drive (APK Arşivi/Bilmece Deyim Atasözü/)
-# Drive'da yeni sürüm yüklendikten sonra aynı klasördeki eski sürüm(ler) çöp kutusuna taşınır.
-# Yeni sürüm = sürüm numarası değişti (v<sürüm> etiketi henüz yok) veya o sürüm Drive'da yok.
+# Yeni sürüm → imzalı APK → GitHub Release + "apk" dalı.
+# Claude'un zamanlanmış görevi "apk" dalındaki APK'yı Google Drive'daki "Claude Apk" klasörüne yükler
+# ve aynı uygulamanın eski sürümünü çöp kutusuna taşır.
+# Yeni sürüm = sürüm numarası değişti (v<sürüm> etiketi henüz yok).
 # Sürüm numarası: AndroidManifest.xml → versionName (versionCode'u da artırın)
-# Drive için tek gizli değişken: GDRIVE_OAUTH  (ayrıntı: .github/scripts/drive_yukle.py)
 name: APK → Drive
 
 on:
@@ -39,7 +39,6 @@ jobs:
       - name: Yeni sürüm var mı?
         id: k
         env:
-          GDRIVE_OAUTH: ${{ secrets.GDRIVE_OAUTH }}
           ZORLA: ${{ inputs.zorla }}
         run: |
           set -euo pipefail
@@ -48,7 +47,7 @@ jobs:
           APK="${DOSYA_ONEKI}-v${SURUM}.apk"
           if [ "${ZORLA:-false}" = "true" ]; then neden="elle istendi"
           elif ! git ls-remote --exit-code --tags origin "refs/tags/v${SURUM}" >/dev/null; then neden="yeni sürüm"
-          elif [ "$(python3 .github/scripts/drive_yukle.py var "$UYGULAMA" "$APK")" = "yok" ]; then neden="Drive'da yok"
+          elif ! git ls-remote --exit-code origin refs/heads/apk >/dev/null; then neden="apk dalı yok"
           else neden=""; fi
           echo "surum=$SURUM" >> "$GITHUB_OUTPUT"
           echo "apk=$APK" >> "$GITHUB_OUTPUT"
@@ -57,7 +56,7 @@ jobs:
             echo "### $APK derlenecek ($neden)" >> "$GITHUB_STEP_SUMMARY"
           else
             echo "gerekli=false" >> "$GITHUB_OUTPUT"
-            echo "### v$SURUM zaten yayında ve Drive'da; derleme atlandı" >> "$GITHUB_STEP_SUMMARY"
+            echo "### v$SURUM zaten yayında; derleme atlandı" >> "$GITHUB_STEP_SUMMARY"
           fi
 
   derle:
@@ -99,6 +98,18 @@ jobs:
           path: dist/${{ env.APK }}
           retention-days: 30
 
+      # Claude'un Google Drive eşitlemesi APK'yı buradan alır (tek dosyalık, her seferinde üzerine yazılan dal)
+      - name: APK'yı apk dalına koy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          d=$(mktemp -d); cp "dist/$APK" "$d/"
+          cd "$d"; git init -q -b apk; git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "$APK"
+          git push -fq "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" apk
+
       - name: GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -109,8 +120,3 @@ jobs:
             gh release create "v$SURUM" "dist/$APK" --target "$GITHUB_SHA" \
               --title "$UYGULAMA v$SURUM" --notes "Otomatik derleme: $GITHUB_SHA"
           fi
-
-      - name: Google Drive'a yükle, eski sürümü kaldır
-        env:
-          GDRIVE_OAUTH: ${{ secrets.GDRIVE_OAUTH }}
-        run: python3 .github/scripts/drive_yukle.py yukle "$UYGULAMA" "dist/$APK" | tee -a "$GITHUB_STEP_SUMMARY"
