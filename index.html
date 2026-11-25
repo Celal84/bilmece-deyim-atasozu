@@ -349,7 +349,8 @@ const HATS = [
 {e:"😎",n:"Havalı Gözlük",lvl:7},
 {e:"🪄",n:"Sihirli Değnek",lvl:8},
 {e:"🚀",n:"Roket Kask",lvl:9},
-{e:"🌟",n:"Yıldız Tacı",lvl:10}
+{e:"🌟",n:"Yıldız Tacı",lvl:10},
+{e:"🏅",n:"Usta Madalyası",usta:1}
 ];
 
 const TITLES = ["Minik Kaşif","Meraklı Tilki","Kitap Kurdu","Bilmece Avcısı","Söz Ustası","Kelime Büyücüsü","Akıl Şövalyesi","Bilgelik Elçisi","Zeka Kahramanı","Orman Bilgesi","Süper Dahi","Efsane Baykuş"];
@@ -769,7 +770,8 @@ const SEC = [
   { id: 'dey', name: 'Deyim Denizi', e: '🌊', col: '#0ea5e9', need: 160, desc: 'Deyimlerin gizli anlamlarını keşfet!' },
   { id: 'ata', name: 'Atasözü Dağı', e: '⛰️', col: '#16a34a', need: 320, desc: 'Atalarımızın bilgece sözleri!' },
   { id: 'fik', name: 'Fıkra Kalesi', e: '🏰', col: '#f59e0b', need: 520, desc: 'Nasreddin Hoca ile gül, düşün!' },
-  { id: 'haz', name: 'Bilgelik Hazinesi', e: '👑', col: '#d4a006', need: 800, desc: 'Büyük final! Her şeyden karışık sorular, çifte puan!' }
+  { id: 'haz', name: 'Bilgelik Hazinesi', e: '👑', col: '#d4a006', need: 800, desc: 'Büyük final! Her şeyden karışık sorular, çifte puan!' },
+  { id: 'ust', name: 'Usta Kulesi', e: '🧠', col: '#4338ca', need: 1000, desc: 'En zor sorular! Tek hak, ipucu yok, büyük puan!' }
 ];
 const secOf = id => SEC.find(s => s.id === id);
 const GAMES = [
@@ -932,6 +934,8 @@ function flushEvents() {
   } else if (e.t === 'info') {
     const st = giveSticker();
     showModal({ e: '🤓', title: 'Bilgi Ustası!', text: `Şimdiye kadar <b>${e.n}</b> yeni bilgi öğrendin! Bilgi Defteri'nde hepsini tekrar okuyabilirsin.` + (st ? `<br>Hediye çıkartma: <span style="font-size:2rem">${st}</span>` : ''), fx: 120, snd: 'win', btns: [{ t: 'Süper! 📒', a: 'close', c: 'green' }] });
+  } else if (e.t === 'usta') {
+    showModal({ e: '🏅', title: 'Gerçek Bir Usta!', text: `Usta Kulesi'nde <b>3 yıldız</b> topladın! Bilo'nun dolabında <b>🏅 Usta Madalyası</b> açıldı.`, fx: 220, snd: 'lvl', btns: [{ t: 'Muhteşem! 🏅', a: 'close', c: 'green' }] });
   } else if (e.t === 'unl') {
     showModal({ e: e.e, title: 'Yeni Bölüm Açıldı!', text: `<b>${e.name}</b> artık seninle! Hemen keşfetmeye ne dersin?`, fx: 160, snd: 'win', btns: [{ t: 'Haydi gidelim! 🚀', a: 'close', c: 'orange' }] });
   }
@@ -995,6 +999,10 @@ SCR.sec = function (id) {
     h += `</div>`;
   } else if (id === 'haz') {
     h += `<div class="hero">${owl()}<div class="bub">Büyük final! 10 karışık soru, <b>çifte puan</b>! Hazır mısın?</div></div><button class="btn orange" data-act="quiz" data-a="haz">🎯 Hazineyi Aç!</button>`;
+  } else if (id === 'ust') {
+    h += `<div class="hero">${owl()}<div class="bub">Usta Kulesi'ne hoş geldin! Burada sorular <b>çok zor</b>.</div></div>
+<div class="fb" style="background:#fff"><b>🧠 Usta kuralları</b><br>• 10 karışık soru, 6 seçenek<br>• Her soruda <b>tek hak</b>, ipucu yok<br>• Yeni sorular: <b>Harf Ustası</b> ve <b>Atasözünü Tamamla</b><br>• Her doğru cevap 25 puan!<br>• 3 yıldız toplarsan Bilo'ya <b>🏅 Usta Madalyası</b></div>
+<button class="btn" style="background:${s.col}" data-act="quiz" data-a="ust">🧠 Kuleye Çık!</button>`;
   } else {
     const tot = ITEMS[id].length, ln = learned(id);
     h += `<div class="hero">${owl()}<div class="bub">${s.desc}<div class="bar"><i style="width:${ln / tot * 100}%"></i></div><small>Öğrenilen: ${ln} / ${tot}</small></div></div>
@@ -1037,7 +1045,7 @@ SCR.notebook = function () {
 };
 SCR.wardrobe = function () {
   let h = `<div class="top"><button class="back" data-act="back">←</button><div class="title">🎩 Bilo'nun Dolabı</div></div><div style="width:9rem;margin:0 auto">${owl('big')}</div><p style="text-align:center">Seviye atladıkça yeni aksesuarlar açılır!</p><div class="hats">`;
-  HATS.forEach(hd => { const open = level() >= hd.lvl; h += `<button class="hatc ${open ? '' : 'no'} ${S.hat === hd.e ? 'sel' : ''}" ${open ? `data-act="hat" data-a="${hd.e}"` : `data-act="hatlock" data-a="${hd.lvl}"`}><span class="em">${hd.e || '🦉'}</span>${hd.n}<br><small>${open ? '' : '🔒 Seviye ' + hd.lvl}</small></button>`; });
+  HATS.forEach(hd => { const open = hd.usta ? (S.best.ust || 0) >= 3 : level() >= hd.lvl; h += `<button class="hatc ${open ? '' : 'no'} ${S.hat === hd.e ? 'sel' : ''}" ${open ? `data-act="hat" data-a="${hd.e}"` : `data-act="hatlock" data-a="${hd.usta ? 'usta' : hd.lvl}"`}><span class="em">${hd.e || '🦉'}</span>${hd.n}<br><small>${open ? '' : hd.usta ? '🔒 Usta Kulesi 3⭐' : '🔒 Seviye ' + hd.lvl}</small></button>`; });
   setApp(h + '</div>');
 };
 SCR.settings = function () {
@@ -1050,7 +1058,8 @@ SCR.settings = function () {
 };
 
 // ---------- Soru üretimi ----------
-function opts4(correct, pool, n = 4) {
+let OPTN = 4; // Usta Kulesi'nde 6 seçenek
+function opts4(correct, pool, n = OPTN) {
   const seen = new Set([lc(correct)]), out = [];
   shuffle(pool.slice()).forEach(x => { if (out.length < n - 1 && !seen.has(lc(x))) { seen.add(lc(x)); out.push(x); } });
   return shuffle([{ t: correct, c: 1 }, ...out.map(t => ({ t, c: 0 }))]);
@@ -1080,7 +1089,7 @@ function makeQ(sec, it) {
     if (pool.length < 3) pool = ITEMS.bil.filter(x => x.id !== it.id).map(x => x.a);
     q.tag = 'Bilmece'; q.prompt = esc(it.q); q.speak = it.q; q.opts = opts4(it.a, pool);
     q.fb = `${it.e} Cevap: <b>${it.a}</b>`;
-    if (it.fq && Math.random() < .4) {
+    if (it.fq && OPTN === 4 && Math.random() < .4) {
       const f = it.fq; q.tag = 'Bilgi Avı'; q.prompt = `${it.e} ${esc(f[0])}`; q.speak = f[0];
       q.opts = shuffle([{ t: f[1], c: 1 }, { t: f[2], c: 0 }, { t: f[3], c: 0 }]);
     }
@@ -1140,12 +1149,53 @@ function pickItems(sec, n) {
   const L = ITEMS[sec].slice(); L.forEach(x => x._r = (S.mast[x.id] || 0) + Math.random() * 2.2 + (x.hard ? (S.pts < 100 ? 1 : 0) : (S.pts > 300 ? .6 : 0)));
   return L.sort((a, b) => a._r - b._r).slice(0, n);
 }
+// ---------- Usta Kulesi ----------
+const half = t => { const w = t.split(' '), k = Math.ceil(w.length / 2); return [w.slice(0, k).join(' '), w.slice(k).join(' ')]; };
+function makeUQ(sec, it) {
+  const base = { id: it.id, sec, tries: 0, hint: false, fact: it.f, hard: it.hard };
+  if (sec === 'bil' && it.a.replace(/ /g, '').length <= 10 && Math.random() < .5) {
+    const ans = uc(it.a), L = ans.replace(/ /g, '').split('');
+    let ord; do { ord = shuffle(L.map((x, i) => i)); } while (L.length > 2 && ord.every((v, i) => L[v] === L[i]));
+    return Object.assign(base, { kind: 'spell', tag: 'Harf Ustası', prompt: esc(it.q) + '<br><small>Cevabın harflerini doğru sıraya diz!</small>', speak: it.q, ans, tiles: ord.map(i => L[i]), put: [], fb: `${it.e} Cevap: <b>${it.a}</b>` });
+  }
+  if (sec === 'ata' && Math.random() < .5) {
+    const [hd, tl] = half(it.t), others = ITEMS.ata.filter(x => x.id !== it.id && !sameGrp(x, it)).map(x => half(x.t)[1]);
+    return Object.assign(base, { tag: 'Atasözünü Tamamla', prompt: `${it.e} Atasözünü tamamla:<br><br><b>${esc(hd)} …</b>`, speak: 'Atasözünü tamamla. ' + hd, opts: opts4(tl, others, 6), fb: `${it.e} <b>${esc(it.t)}</b><br>${it.m}` });
+  }
+  OPTN = 6; const q = makeQ(sec, it); OPTN = 4;
+  return q;
+}
+function pickUsta() {
+  const qs = [];
+  [['bil', 3], ['dey', 2], ['ata', 3], ['tek', 1], ['fik', 1]].forEach(([s, n]) => {
+    const L = ITEMS[s].slice(); L.forEach(x => x._r = (x.hard ? 0 : 1.2) + (S.mast[x.id] || 0) * .3 + Math.random() * 1.5);
+    L.sort((a, b) => a._r - b._r).slice(0, n).forEach(it => qs.push(makeUQ(s, it)));
+  });
+  return shuffle(qs);
+}
+const makeAny = (sec, it) => QZ && QZ.sec === 'ust' ? makeUQ(sec, it) : makeQ(sec, it);
+function spDraw() {
+  const q = QZ.qs[QZ.i], el = $('#spell'); if (!el) return;
+  let j = 0; const res = q.done ? (q.ok ? 'ok' : 'bad') : '';
+  const slots = q.ans.split(' ').map(wd => `<span style="display:inline-flex;gap:.25rem">${wd.split('').map(() => { const k = j++; const p = q.put[k]; return `<button class="slot ${p == null ? '' : 'fill'} ${res}" data-act="sps" data-i="${k}" style="min-width:2.2rem;padding:.3rem .35rem;font-weight:800">${p == null ? '&nbsp;' : q.tiles[p]}</button>`; }).join('')}</span>`).join('');
+  const full = q.put.length === q.tiles.length;
+  el.innerHTML = `<div class="slots" style="gap:.3rem 1rem">${slots}</div>` + (q.done ? '' : `<div class="chips" style="gap:.4rem">${q.tiles.map((t, i) => `<button class="chip2 ${q.put.includes(i) ? 'used' : ''}" data-act="spt" data-i="${i}" style="min-width:2.6rem;font-weight:800;font-size:1.2rem">${t}</button>`).join('')}</div>
+<div class="row"><button class="btn alt" data-act="spdel" ${q.put.length ? '' : 'disabled'}>⌫ Sil</button><button class="btn green" data-act="spchk" ${full ? '' : 'disabled'}>✔ Kontrol et</button></div>`);
+}
+function spCheck(el) {
+  const q = QZ.qs[QZ.i]; if (q.done || q.put.length !== q.tiles.length) return;
+  const ok = q.put.map(i => q.tiles[i]).join('') === q.ans.replace(/ /g, '');
+  if (ok) { qWin(q, el); spDraw(); }
+  else { q.done = true; q.ok = false; spDraw(); qLose(q); }
+}
+
 // ---------- Quiz ----------
 let QZ = null;
 SCR.quiz = function (sec) {
   if (!QZ || QZ.sec !== sec) {
     let qs;
     if (sec === 'haz') { qs = []; ['bil', 'tek', 'dey', 'ata', 'fik'].forEach(s => pickItems(s, 2).forEach(it => qs.push(makeQ(s, it)))); shuffle(qs); }
+    else if (sec === 'ust') qs = pickUsta();
     else qs = pickItems(sec, 5).map(it => makeQ(sec, it));
     QZ = { sec, qs, n: qs.length, i: 0, ft: 0, gain: 0, combo: 0, res: [] };
   }
@@ -1158,31 +1208,41 @@ function quizShow() {
   setApp(`<div class="top"><button class="back" data-act="exitq">✕</button><div class="dots">${dots}</div><div class="chip" id="qgain">⭐ ${Q.gain}</div></div>
 <div style="display:flex;align-items:flex-end;gap:.5rem">${owl('sm')}<div class="chip" style="font-size:.9rem">${Q.combo >= 3 ? '🔥 Seri x' + Q.combo : 'Bilo seninle!'}</div></div>
 <div class="qcard"><span class="tag" style="background:${tagCol}">${q.tag}${q.rep ? ' · tekrar' : ''}</span><button class="speak" data-act="qspeak">🔊</button><div>${q.prompt}</div></div>
-<div id="opts">${q.opts.map((o, i) => `<button class="opt" style="animation-delay:${i * .07}s" data-act="pick" data-i="${i}">${esc(o.t)}</button>`).join('')}</div>
-<div id="fbArea"><div style="text-align:center"><button class="hintbtn" data-act="hint">💡 İpucu (2 yanlışı ele)</button></div></div>`);
+${q.kind === 'spell' ? '<div id="spell"></div>' : `<div id="opts">${q.opts.map((o, i) => `<button class="opt" style="animation-delay:${i * .07}s" data-act="pick" data-i="${i}">${esc(o.t)}</button>`).join('')}</div>`}
+<div id="fbArea"><div style="text-align:center">${Q.sec === 'ust' ? '<span class="hintbtn" style="display:inline-block">🧠 Usta modu: tek hak, ipucu yok!</span>' : '<button class="hintbtn" data-act="hint">💡 İpucu (2 yanlışı ele)</button>'}</div></div>`);
+  if (q.kind === 'spell') spDraw();
   if (!q.shown) { q.shown = 1; setTimeout(() => speak(q.speak), 350); }
 }
 function qPick(i, el) {
   const Q = QZ, q = Q.qs[Q.i]; if (q.done) return; const o = q.opts[i];
   const btns = document.querySelectorAll('#opts .opt');
   if (o.c) {
-    q.done = true; const first = q.tries === 0 && !q.hint;
-    let base = (S.mast[q.id] || 0) >= 3 ? 5 : 10; if (q.hard) base += 2; if (Q.sec === 'haz') base *= 2;
-    if (!first) base = Math.ceil(base / 2);
-    if (first) { Q.combo++; if (!q.rep) Q.ft++; if (Q.combo >= 3) base += Math.min(Q.combo - 2, 3) * 2; S.mast[q.id] = Math.min(5, (S.mast[q.id] || 0) + 1); } else Q.combo = 0;
-    Q.res[Q.i] = first; Q.gain += base; $('#qgain').textContent = '⭐ ' + Q.gain; addPts(base, el); A.s('ok'); confetti(first ? 40 : 15);
-    btns[i].classList.add('ok'); btns.forEach(b => { if (b !== btns[i]) b.classList.add('off'); }); owlAnim('cheer');
-    if (!first && !q.rep) { Q.qs.push(Object.assign({}, makeQ(q.sec, ITEMS[q.sec].find(x => x.id === q.id)), { rep: true })); }
-    quizDone(true, q);
+    btns[i].classList.add('ok'); btns.forEach(b => { if (b !== btns[i]) b.classList.add('off'); });
+    qWin(q, el);
   } else {
     q.tries++; Q.combo = 0; btns[i].classList.add('no'); btns[i].style.pointerEvents = 'none'; A.s('no'); owlAnim('sad');
-    if (q.tries >= 2 || q.opts.length - q.tries <= 1) {
-      q.done = true; Q.res[Q.i] = false; S.mast[q.id] = Math.max(0, (S.mast[q.id] || 0) - 1); save();
+    if (q.tries >= 2 || q.opts.length - q.tries <= 1 || Q.sec === 'ust') {
       q.opts.forEach((x, k) => { if (x.c) btns[k].classList.add('ok'); else btns[k].classList.add('off'); });
-      if (!q.rep) Q.qs.push(Object.assign({}, makeQ(q.sec, ITEMS[q.sec].find(x => x.id === q.id)), { rep: true }));
-      quizDone(false, q);
+      qLose(q);
     } else { $('#fbArea').innerHTML = `<div class="fb no">Olmadı, bir daha dene! 💪 Sen yaparsın.</div>`; speak('Bir daha dene!'); }
   }
+}
+const qAgain = q => { if (!q.rep) QZ.qs.push(Object.assign({}, makeAny(q.sec, ITEMS[q.sec].find(x => x.id === q.id)), { rep: true })); };
+function qWin(q, el) {
+  const Q = QZ; q.done = true; q.ok = true; const first = q.tries === 0 && !q.hint;
+  let base = (S.mast[q.id] || 0) >= 3 ? 5 : 10; if (q.hard) base += 2; if (Q.sec === 'haz') base *= 2; if (Q.sec === 'ust') base = q.hard ? 28 : 25;
+  if (!first) base = Math.ceil(base / 2);
+  if (first) { Q.combo++; if (!q.rep) Q.ft++; if (Q.combo >= 3) base += Math.min(Q.combo - 2, 3) * 2; S.mast[q.id] = Math.min(5, (S.mast[q.id] || 0) + 1); } else Q.combo = 0;
+  Q.res[Q.i] = first; Q.gain += base; $('#qgain').textContent = '⭐ ' + Q.gain; addPts(base, el); A.s('ok'); confetti(first ? 40 : 15);
+  owlAnim('cheer');
+  if (!first) qAgain(q);
+  quizDone(true, q);
+}
+function qLose(q) {
+  const Q = QZ; q.done = true; Q.combo = 0; Q.res[Q.i] = false; S.mast[q.id] = Math.max(0, (S.mast[q.id] || 0) - 1); save();
+  if (q.kind === 'spell') { A.s('no'); owlAnim('sad'); }
+  qAgain(q);
+  quizDone(false, q);
 }
 function quizDone(ok, q) {
   const last = QZ.i >= QZ.qs.length - 1;
@@ -1201,8 +1261,9 @@ function qHint() {
 function exitQuiz() { showModal({ e: '🤔', title: 'Çıkmak istiyor musun?', text: 'Bu turdaki ilerlemen kaybolacak.', btns: [{ t: 'Devam et 💪', a: 'close', c: 'green' }, { t: 'Çık', a: 'quitq', c: 'alt' }] }); }
 function endQuiz() {
   const Q = QZ; const r = Q.ft / Q.n; const stars = r >= .99 ? 3 : r >= .6 ? 2 : 1;
-  S.rounds++; S.best[Q.sec] = Math.max(S.best[Q.sec] || 0, stars); const bonus = stars * (Q.sec === 'haz' ? 10 : 5); addPts(bonus);
-  const o = { title: Q.sec === 'haz' ? 'Hazine Turu Bitti!' : 'Tur Bitti!', ft: Q.ft, n: Q.n, gain: Q.gain + bonus, bonus, stars, again: Q.sec, back: Q.sec, gold: stars === 3 };
+  if (Q.sec === 'ust' && stars === 3 && (S.best.ust || 0) < 3) evQ.push({ t: 'usta' });
+  S.rounds++; S.best[Q.sec] = Math.max(S.best[Q.sec] || 0, stars); const bonus = stars * (Q.sec === 'haz' ? 10 : Q.sec === 'ust' ? 15 : 5); addPts(bonus);
+  const o = { title: Q.sec === 'haz' ? 'Hazine Turu Bitti!' : Q.sec === 'ust' ? 'Usta Turu Bitti!' : 'Tur Bitti!', ft: Q.ft, n: Q.n, gain: Q.gain + bonus, bonus, stars, again: Q.sec, back: Q.sec, gold: stars === 3 };
   QZ = null; replace('result', o);
 }
 SCR.result = function (o) {
@@ -1318,6 +1379,10 @@ const ACT = {
   say2() { forceSpeak(cur.p.say, .9); },
   pick(el) { qPick(+el.dataset.i, el); },
   hint: qHint,
+  spt(el) { const q = QZ.qs[QZ.i], i = +el.dataset.i; if (q.done || q.put.includes(i) || q.put.length >= q.tiles.length) return; q.put.push(i); spDraw(); },
+  sps(el) { const q = QZ.qs[QZ.i], k = +el.dataset.i; if (q.done || k >= q.put.length) return; q.put.splice(k, 1); spDraw(); },
+  spdel() { const q = QZ.qs[QZ.i]; if (q.done) return; q.put.pop(); spDraw(); },
+  spchk(el) { spCheck(el); },
   qspeak() { forceSpeak(QZ.qs[QZ.i].speak, .9); },
   qsay() { forceSpeak(QZ.qs[QZ.i].say, .8); },
   qnext() { QZ.i++; if (QZ.i >= QZ.qs.length) endQuiz(); else quizShow(); },
@@ -1330,7 +1395,7 @@ const ACT = {
   album() { go('album'); }, wardrobe() { go('wardrobe'); }, settings() { go('settings'); },
   stk(el) { A.s('pop'); el.classList.add('new'); speak('Harika bir çıkartma!'); setTimeout(() => el.classList.remove('new'), 1200); },
   hat(el) { S.hat = el.dataset.a; save(); A.s('ok'); render(); },
-  hatlock(el) { A.s('no'); showModal({ e: '🔒', title: 'Kilitli', text: `Bu aksesuar <b>Seviye ${el.dataset.a}</b>'de açılır!`, btns: [{ t: 'Tamam', a: 'close', c: 'green' }] }); },
+  hatlock(el) { A.s('no'); showModal({ e: '🔒', title: 'Kilitli', text: el.dataset.a === 'usta' ? `Bu madalya <b>Usta Kulesi</b>'nde 3 yıldız toplayınca açılır!` : `Bu aksesuar <b>Seviye ${el.dataset.a}</b>'de açılır!`, btns: [{ t: 'Tamam', a: 'close', c: 'green' }] }); },
   tog(el) { const k = el.dataset.a; S.set[k] = !S.set[k]; save(); render(); },
   savename() { S.name = ($('#nm').value || '').trim() || 'Kaşif'; save(); A.s('ok'); showModal({ e: '✅', title: 'Kaydedildi!', text: 'Merhaba ' + esc(S.name) + '!' }); },
   reset() { showModal({ e: '⚠️', title: 'Emin misin?', text: 'Tüm puanlar, çıkartmalar ve ilerleme silinecek!', btns: [{ t: 'Vazgeç', a: 'close', c: 'green' }, { t: 'Evet, sıfırla', a: 'reset2', c: 'alt' }] }); },
@@ -1346,7 +1411,7 @@ const ACT = {
 };
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-act]'); if (!a) return;
-  if (ACT[a.dataset.act]) { if (!['pick', 'bpick', 'mflip', 'schip', 'sslot', 'mt'].includes(a.dataset.act)) A.s('click'); ACT[a.dataset.act](a); }
+  if (ACT[a.dataset.act]) { if (!['pick', 'bpick', 'mflip', 'schip', 'sslot', 'mt', 'spchk'].includes(a.dataset.act)) A.s('click'); ACT[a.dataset.act](a); }
 });
 
 // ---------- Başlat ----------

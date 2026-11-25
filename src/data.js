@@ -198,7 +198,8 @@ const HATS = [
 {e:"😎",n:"Havalı Gözlük",lvl:7},
 {e:"🪄",n:"Sihirli Değnek",lvl:8},
 {e:"🚀",n:"Roket Kask",lvl:9},
-{e:"🌟",n:"Yıldız Tacı",lvl:10}
+{e:"🌟",n:"Yıldız Tacı",lvl:10},
+{e:"🏅",n:"Usta Madalyası",usta:1}
 ];
 
 const TITLES = ["Minik Kaşif","Meraklı Tilki","Kitap Kurdu","Bilmece Avcısı","Söz Ustası","Kelime Büyücüsü","Akıl Şövalyesi","Bilgelik Elçisi","Zeka Kahramanı","Orman Bilgesi","Süper Dahi","Efsane Baykuş"];
